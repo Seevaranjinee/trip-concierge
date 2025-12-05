@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pondy Curations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fonts: 1 classy serif + 1 clean sans -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top navigation -->
+  <header class="site-header">
+    <div class="logo">Pondy Curations</div>
+    <nav class="main-nav">
+      <a href="#explorer-section">Explore</a>
+      <a href="#host-section">Host & Partner</a>
+      <a href="#how-it-works">How it works</a>
+    </nav>
+  </header>
+
+  <!-- Hero: entry choice -->
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Curate your Pondicherry story</h1>
+        <p>Elegant stays, French-quarter lanes, sea breeze nights – all stitched into one bespoke journey.</p>
+        <div class="hero-actions">
+          <button class="hero-btn primary" data-open="explorer-section">
+            I want to explore
+          </button>
+          <button class="hero-btn secondary" data-open="host-section">
+            I want to host &amp; partner
+          </button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <!-- Placeholder: soft illustration / gradient, no heavy image -->
+        <div class="hero-card">
+          <span class="hero-tag">Pondicherry · French Fantasy</span>
+          <p>White Town facades, bougainvillea balconies, and coastal sunsets in one curation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trip total bar -->
+    <section class="trip-total-bar" id="trip-total-bar">
+      <div class="trip-summary">
+        Your curated journey starts at
+        <span class="trip-amount" id="trip-amount">₹0</span>
+      </div>
+      <button class="review-journey-btn" id="review-journey-btn">
+        Review my journey
+      </button>
+    </section>
+
+    <!-- Explorer journey -->
+    <section id="explorer-section" class="panel panel-active">
+      <header class="panel-header">
+        <h2>For Explorers</h2>
+        <p>Answer a few delightful questions and watch a custom Pondicherry escape come alive.</p>
+      </header>
+
+      <!-- 1. Trip basics -->
+      <section class="card-group">
+        <h3>Trip basics</h3>
+        <div class="cards-vertical">
+          <article class="card" data-category="basics" data-id="trip-style-chill">
+            <img src="assets/trip-chill.jpg" alt="Relaxed trip">
+            <h4>Slow &amp; dreamy</h4>
+            <p>Wake late, wander lanes, and linger in cafés – a slow, cinematic Pondy.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="basics" data-id="trip-style-balanced">
+            <img src="assets/trip-balanced.jpg" alt="Balanced trip">
+            <h4>Balanced &amp; breezy</h4>
+            <p>A neat mix of heritage, beaches, and food trails without rushing.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="basics" data-id="trip-style-packed">
+            <img src="assets/trip-packed.jpg" alt="Packed trip">
+            <h4>All‑out explorer</h4>
+            <p>Sunrise to starlight – stack your days with walks, waves, and stories.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <!-- days and explorers can be controls instead of cards -->
+          <div class="inline-controls">
+            <div class="control">
+              <label for="num-days">Number of days</label>
+              <select id="num-days">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4–5</option>
+                <option value="6">6+</option>
+              </select>
+            </div>
+            <div class="control">
+              <label for="num-explorers">Number of explorers</label>
+              <select id="num-explorers">
+                <option value="1">Solo</option>
+                <option value="2">Duo</option>
+                <option value="4">3–5</option>
+                <option value="6">6+</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Arrivals & departures -->
+      <section class="card-group">
+        <h3>Arrivals &amp; departures</h3>
+        <div class="cards-vertical">
+          <article class="card" data-category="transport" data-id="airport-ecr">
+            <img src="assets/ecr-drive.jpg" alt="ECR drive">
+            <h4>Sunset ECR drive</h4>
+            <p>Glide from Chennai airport to Pondicherry along the coast with curated music and views.</p>
+            <div class="card-options">
+              <label><input type="radio" name="airport-ecr" value="pickup"> Pickup</label>
+              <label><input type="radio" name="airport-ecr" value="drop"> Drop</label>
+              <label><input type="radio" name="airport-ecr" value="both"> Both</label>
+            </div>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="transport" data-id="train-transfer">
+            <img src="assets/train-arrival.jpg" alt="Train arrival">
+            <h4>Station welcome</h4>
+            <p>A friendly face at Puducherry station and a seamless ride to your stay.</p>
+            <div class="card-options">
+              <label><input type="radio" name="train-transfer" value="pickup"> Pickup</label>
+              <label><input type="radio" name="train-transfer" value="drop"> Drop</label>
+              <label><input type="radio" name="train-transfer" value="both"> Both</label>
+            </div>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="transport" data-id="bus-transfer">
+            <img src="assets/bus-arrival.jpg" alt="Bus arrival">
+            <h4>Bus stand to boulevards</h4>
+            <p>Arrive by bus and slide straight into White Town without the logistics stress.</p>
+            <div class="card-options">
+              <label><input type="radio" name="bus-transfer" value="pickup"> Pickup</label>
+              <label><input type="radio" name="bus-transfer" value="drop"> Drop</label>
+              <label><input type="radio" name="bus-transfer" value="both"> Both</label>
+            </div>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. Stay location & type -->
+      <section class="card-group">
+        <h3>Where would you like to stay?</h3>
+        <div class="cards-vertical">
+          <article class="card" data-category="stay-location" data-id="white-town">
+            <img src="assets/white-town.jpg" alt="White Town">
+            <h4>French Quarter</h4>
+            <p>Pastel facades, cobbled lanes, cafés and the sea – wake up inside a postcard.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="stay-location" data-id="beach-ecr">
+            <img src="assets/beachside.jpg" alt="Beachside stay">
+            <h4>Beachside &amp; ECR</h4>
+            <p>Resorts and stays where waves become your alarm and sunsets your ritual.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="stay-location" data-id="local-hood">
+            <img src="assets/local-stay.jpg" alt="Local neighbourhood stay">
+            <h4>Local neighbourhoods</h4>
+            <p>Homestays and guest houses tucked into real Pondy life, markets and temples.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+        </div>
+
+        <div class="cards-vertical">
+          <article class="card" data-category="stay-type" data-id="heritage-villa">
+            <img src="assets/heritage-villa.jpg" alt="Heritage villa">
+            <h4>Heritage villa</h4>
+            <p>High ceilings, courtyards, wooden staircases – stay inside colonial history.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="stay-type" data-id="boutique-hotel">
+            <img src="assets/boutique-hotel.jpg" alt="Boutique hotel">
+            <h4>Boutique hotel</h4>
+            <p>Design‑forward rooms with modern comforts and a strong aesthetic mood.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="stay-type" data-id="homestay">
+            <img src="assets/homestay.jpg" alt="Homestay">
+            <h4>Homestay</h4>
+            <p>Live with locals, swap stories over chai, and feel like you belong.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- 4. Themes & must‑visit areas -->
+      <section class="card-group">
+        <h3>What pulls you to Pondy?</h3>
+        <div class="cards-vertical">
+          <article class="card" data-category="theme" data-id="heritage-culture">
+            <img src="assets/heritage-walk.jpg" alt="Heritage">
+            <h4>Heritage &amp; culture</h4>
+            <p>Guided walks through French and Tamil quarters, churches, and old‑world stories.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="theme" data-id="beach-blue">
+            <img src="assets/beach-walk.jpg" alt="Beach">
+            <h4>Beaches &amp; blue hours</h4>
+            <p>Sunrise promenades, boat rides, and golden‑hour beaches stitched into your days.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="theme" data-id="spiritual-auroville">
+            <img src="assets/auroville.jpg" alt="Auroville">
+            <h4>Spiritual &amp; Auroville</h4>
+            <p>Quiet corners, yoga, and contemplative spaces around ashrams and Auroville.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="theme" data-id="art-cafes">
+            <img src="assets/cafe-night.jpg" alt="Cafes">
+            <h4>Art, markets &amp; café nights</h4>
+            <p>Design cafés, local art, and late‑evening wanders through lit‑up streets.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- 5. Activities & experiences -->
+      <section class="card-group">
+        <h3>Activities &amp; experiences</h3>
+        <div class="cards-vertical">
+          <article class="card" data-category="activity" data-id="water-adventure">
+            <img src="assets/water-sports.jpg" alt="Water adventure">
+            <h4>Water &amp; adventure</h4>
+            <p>Scuba, kayaking, surfing and more with vetted operators along the coast.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="activity" data-id="guided-walks">
+            <img src="assets/guided-walk.jpg" alt="Guided walk">
+            <h4>Guided walks &amp; stories</h4>
+            <p>Walk with storytellers who decode architecture, food, and folklore for you.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="activity" data-id="spa-slow">
+            <img src="assets/spa.jpg" alt="Spa">
+            <h4>Spa &amp; slow rituals</h4>
+            <p>Massages, wellness sessions, and unhurried afternoons to recharge.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="activity" data-id="photo-memories">
+            <img src="assets/photo-shoot.jpg" alt="Photography">
+            <h4>Photography &amp; memories</h4>
+            <p>Sunset shoots and candid portraits in alleyways and along the promenade.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="activity" data-id="surprise-planning">
+            <img src="assets/surprise.jpg" alt="Surprise planning">
+            <h4>Surprises &amp; celebrations</h4>
+            <p>Proposals, birthdays, and secret setups crafted with your story in mind.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- 6. Food & drinks -->
+      <section class="card-group">
+        <h3>Food &amp; drinks</h3>
+        <div class="cards-vertical">
+          <article class="card" data-category="food" data-id="french-cafes">
+            <img src="assets/french-cafe.jpg" alt="French cafes">
+            <h4>French café trail</h4>
+            <p>Croissants, coffee, and cobbled lanes – a café‑hop through French‑inspired spaces.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="food" data-id="creole-fusion">
+            <img src="assets/creole-food.jpg" alt="Creole food">
+            <h4>Franco‑Tamil &amp; Creole</h4>
+            <p>Fusion flavours where French techniques meet Tamil soul food.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="food" data-id="south-indian">
+            <img src="assets/south-indian.jpg" alt="South Indian food">
+            <h4>South Indian comfort</h4>
+            <p>Dosas, filter coffee, seafood and tiffin joints loved by locals.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="food" data-id="vegan-organic">
+            <img src="assets/vegan-cafe.jpg" alt="Vegan and organic">
+            <h4>Vegan &amp; organic cafés</h4>
+            <p>Bowls, bakes, and brews from earth‑friendly kitchens in town and Auroville.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="food" data-id="alcohol-preference">
+            <img src="assets/wine.jpg" alt="Drinks">
+            <h4>Drinks &amp; mood</h4>
+            <p>Tell us if you prefer dry, family‑friendly evenings or wine and cocktails at sunset.</p>
+            <div class="card-options">
+              <label><input type="radio" name="alcohol" value="no"> No alcohol</label>
+              <label><input type="radio" name="alcohol" value="yes"> Alcohol welcome</label>
+            </div>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- 7. Getting around -->
+      <section class="card-group">
+        <h3>Getting around town</h3>
+        <div class="cards-vertical">
+          <article class="card" data-category="mobility" data-id="scooter-rental">
+            <img src="assets/scooter.jpg" alt="Scooter">
+            <h4>Scooter &amp; bike rentals</h4>
+            <p>Zip through narrow lanes and along the sea with easy daily rentals.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="mobility" data-id="car-driver">
+            <img src="assets/car-driver.jpg" alt="Car with driver">
+            <h4>Car with driver</h4>
+            <p>Door‑to‑door comfort with local drivers who know every shortcut.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="mobility" data-id="public-plan">
+            <img src="assets/public-plan.jpg" alt="Public transport">
+            <h4>Walk + public plan</h4>
+            <p>Curated walking loops, autos, and buses so you explore like a local.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- 8. Souvenirs -->
+      <section class="card-group">
+        <h3>Souvenirs &amp; keepsakes</h3>
+        <div class="cards-vertical">
+          <article class="card" data-category="souvenirs" data-id="decor-crafts">
+            <img src="assets/decor.jpg" alt="Decor">
+            <h4>Decor &amp; crafts</h4>
+            <p>Handmade pieces, textiles, and art to bring Pondy’s colours home.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+
+          <article class="card" data-category="souvenirs" data-id="gourmet">
+            <img src="assets/gourmet.jpg" alt="Gourmet goodies">
+            <h4>Gourmet &amp; organic</h4>
+            <p>Chocolates, coffee, and organic treats sourced from local makers.</p>
+            <button class="card-select-btn">Add to journey</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- Explorer summary & checkout -->
+      <section class="summary-section" id="explorer-summary">
+        <h3>Your curated journey</h3>
+        <p>A quick snapshot of everything you picked, plus the starting price.</p>
+        <div id="summary-list"></div>
+
+        <form class="checkout-form">
+          <h4>Almost there</h4>
+          <p>Share your details so the concierge team can refine, match partners, and share options.</p>
+          <label>
+            Name
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            Phone / WhatsApp
+            <input type="tel" name="phone" required>
+          </label>
+          <label>
+            Tentative dates
+            <input type="text" name="dates" placeholder="e.g., 14–17 March">
+          </label>
+          <p class="fee-note">
+            Curation fee: ₹9 – supports human verification, safety checks, and personalised planning.
+          </p>
+          <button type="submit" class="primary">
+            Request my curated plan
+          </button>
+        </form>
+      </section>
+    </section>
+
+    <!-- Host & Partner onboarding -->
+    <section id="host-section" class="panel">
+      <header class="panel-header">
+        <h2>For Hosts &amp; Partners</h2>
+        <p>List your stays, tours, cafés, or experiences in a curated, quality‑first Pondicherry marketplace.</p>
+      </header>
+
+      <section class="card-group">
+        <h3>Join as an experience partner</h3>
+        <p class="panel-subtext">
+          A simple onboarding, careful verification, and then your offering appears in tailored itineraries.
+        </p>
+
+        <form class="host-form">
+          <label>
+            Business / brand name
+            <input type="text" name="brand" required>
+          </label>
+
+          <label>
+            Type of service
+            <select name="service-type" required>
+              <option value="">Select one</option>
+              <option value="stay">Stay (villa, hotel, homestay)</option>
+              <option value="tour">Tour &amp; activity</option>
+              <option value="fnb">Food &amp; beverage</option>
+              <option value="transport">Transport</option>
+              <option value="wellness">Wellness &amp; spa</option>
+              <option value="photo">Photography</option>
+              <option value="other">Other experience</option>
+            </select>
+          </label>
+
+          <label>
+            Location / area
+            <input type="text" name="location" placeholder="White Town, ECR, Auroville side, etc." required>
+          </label>
+
+          <label>
+            Short description
+            <textarea name="description" rows="3" placeholder="Tell explorers what makes this special."></textarea>
+          </label>
+
+          <label>
+            Typical pricing
+            <input type="text" name="pricing" placeholder="e.g., ₹4000 per night, ₹1500 per person, etc.">
+          </label>
+
+          <label>
+            Website / Instagram
+            <input type="url" name="social" placeholder="https://">
+          </label>
+
+          <label>
+            Contact email
+            <input type="email" name="email" required>
+          </label>
+
+          <label>
+            Phone / WhatsApp
+            <input type="tel" name="phone" required>
+          </label>
+
+          <p class="onboarding-note">
+            After you submit, our onboarding team will reach out, verify details, discuss pricing,
+            and then bring you on board as a featured partner.
+          </p>
+
+          <button type="submit" class="primary">
+            Apply to partner
+          </button>
+        </form>
+      </section>
+
+      <section id="how-it-works" class="timeline">
+        <h3>How onboarding works</h3>
+        <ol class="timeline-steps">
+          <li>
+            <strong>Apply</strong> – share your offering, location, and basic pricing.
+          </li>
+          <li>
+            <strong>Verify</strong> – we run checks, talk to you, and review quality.
+          </li>
+          <li>
+            <strong>Curate</strong> – your service is mapped to matching explorer profiles.
+          </li>
+          <li>
+            <strong>Delight</strong> – host explorers and become part of their Pondy story.
+          </li>
+        </ol>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Pondy Curations · Crafted in Pondicherry with a French‑Indian soul.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
