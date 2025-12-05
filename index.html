@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <title>Pondy Curations</title>
@@ -8,10 +8,10 @@
   <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-b from-amber-50 via-white to-sky-50 text-slate-900">
+<body class="min-h-screen bg-gradient-to-b from-amber-50 via-white to-sky-50 text-slate-900">
 
   <!-- Header -->
-  <header class="w-full border-b border-amber-100/60 bg-amber-50/60 backdrop-blur">
+  <header class="w-full border-b border-amber-100/60 bg-amber-50/70 backdrop-blur">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-8">
       <div class="text-lg font-semibold tracking-wide text-slate-800">
         Pondy Curations
@@ -29,9 +29,10 @@
     <section class="mx-auto flex min-h-[60vh] max-w-6xl flex-col items-center gap-10 px-4 py-10 md:flex-row md:px-8 md:py-16">
       <!-- Left: text -->
       <div class="flex-1 space-y-6">
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+        <span class="inline-flex items-center gap-2 rounded-full bg-amber-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-900">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
           Pondicherry · French fantasy
-        </p>
+        </span>
         <h1 class="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl lg:text-5xl">
           Curate your own
           <span class="text-indigo-600">Pondicherry story</span>
@@ -42,13 +43,13 @@
         </p>
         <div class="flex flex-col gap-3 sm:flex-row">
           <button
-            class="inline-flex items-center justify-center rounded-full bg-indigo-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm shadow-indigo-500/30 transition hover:bg-indigo-700"
+            class="inline-flex items-center justify-center rounded-full bg-indigo-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm shadow-indigo-500/40 transition duration-200 ease-out hover:bg-indigo-700 hover:shadow-md hover:shadow-indigo-500/60 hover:ring-2 hover:ring-amber-200 hover:ring-offset-2 hover:ring-offset-amber-50"
             onclick="document.getElementById('explorer-section').scrollIntoView({behavior:'smooth'})"
           >
             I want to explore
           </button>
           <button
-            class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/70 px-6 py-2.5 text-sm font-semibold text-slate-800 shadow-sm hover:border-indigo-300 hover:text-indigo-700"
+            class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/80 px-6 py-2.5 text-sm font-semibold text-slate-800 shadow-sm transition duration-200 ease-out hover:border-indigo-300 hover:text-indigo-700 hover:bg-white hover:shadow-md"
             onclick="document.getElementById('host-section').scrollIntoView({behavior:'smooth'})"
           >
             I want to host &amp; partner
@@ -59,25 +60,28 @@
         </p>
       </div>
 
-      <!-- Right: visual card -->
+      <!-- Right: visual glass card -->
       <div class="flex-1">
-        <div class="relative mx-auto max-w-md rounded-3xl bg-white/80 p-6 shadow-xl shadow-amber-200/60 backdrop-blur">
-          <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-900">
-            <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-            Live trip concierge
-          </div>
-          <h2 class="text-lg font-semibold text-slate-900">
-            White Town mornings, sea‑breeze nights
-          </h2>
-          <p class="mt-2 text-sm text-slate-600">
-            Choose your mood – heritage walks, cafés, beaches, or surprises – and watch a curated Pondy
-            itinerary assemble itself in real time.
-          </p>
-          <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
-            <span>Start from a tiny curation fee</span>
-            <span class="rounded-full bg-slate-900 px-3 py-1 text-[11px] font-semibold text-amber-50">
-              Crafted in Pondy
-            </span>
+        <div class="relative mx-auto max-w-md">
+          <div class="absolute -inset-4 -z-10 rounded-[2.25rem] bg-gradient-to-tr from-amber-200/70 via-pink-200/50 to-sky-200/60 blur-2 opacity-80"></div>
+          <div class="relative rounded-3xl border border-white/70 bg-white/70 p-6 shadow-xl shadow-amber-200/60 backdrop-blur-md">
+            <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-slate-900 text-amber-50 px-3 py-1 text-[11px] font-medium">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+              Live trip concierge
+            </div>
+            <h2 class="text-lg font-semibold text-slate-900">
+              White Town mornings, sea‑breeze nights
+            </h2>
+            <p class="mt-2 text-sm text-slate-600">
+              Choose your mood – heritage walks, cafés, beaches, or surprises – and watch a curated Pondy
+              itinerary assemble itself in real time.
+            </p>
+            <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
+              <span>Start from a tiny curation fee</span>
+              <span class="inline-flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-900">
+                bon voyage
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -86,14 +90,14 @@
     <!-- Explorer section -->
     <section id="explorer-section" class="mx-auto max-w-6xl px-4 pb-16 md:px-8">
       <!-- Trip total bar -->
-      <div class="mb-6 flex flex-col items-start justify-between gap-3 rounded-2xl bg-slate-900 px-4 py-3 text-slate-100 md:flex-row md:items-center">
+      <div class="mb-6 flex flex-col items-start justify-between gap-3 rounded-2xl bg-slate-900 px-4 py-3 text-slate-100 shadow-sm shadow-slate-900/40 md:flex-row md:items-center">
         <div class="text-sm">
           Your curated journey starts at
           <span id="trip-amount" class="font-semibold text-amber-300">₹0</span>
         </div>
         <button
           id="review-journey-btn"
-          class="inline-flex items-center justify-center rounded-full bg-amber-300 px-4 py-1.5 text-xs font-semibold text-slate-900 hover:bg-amber-400"
+          class="inline-flex items-center justify-center rounded-full bg-amber-300 px-4 py-1.5 text-xs font-semibold text-slate-900 transition duration-150 hover:bg-amber-400 hover:ring-2 hover:ring-amber-100 hover:ring-offset-2 hover:ring-offset-slate-900"
         >
           Review my journey
         </button>
@@ -118,7 +122,7 @@
         <div class="grid gap-4 md:grid-cols-3">
           <!-- Chill -->
           <article
-            class="group flex cursor-pointer flex-col justify-between rounded-2xl border border-slate-100 bg-white/80 p-4 shadow-sm shadow-amber-100/50 transition hover:-translate-y-1 hover:border-indigo-200 hover:shadow-md"
+            class="group relative flex cursor-pointer flex-col justify-between rounded-2xl border border-slate-100/80 bg-white/80 p-4 shadow-sm shadow-amber-100/50 transition transform duration-200 ease-out hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-100/70"
             data-category="basics"
             data-id="trip-style-chill"
             data-price="500"
@@ -132,7 +136,7 @@
               </p>
             </div>
             <button
-              class="mt-4 inline-flex items-center justify-center rounded-full bg-slate-900 px-3 py-1.5 text-[11px] font-semibold text-amber-50 group-hover:bg-indigo-700"
+              class="mt-4 inline-flex items-center justify-center rounded-full bg-slate-900 px-3 py-1.5 text-[11px] font-semibold text-amber-50 transition-colors duration-150 group-hover:bg-indigo-700"
             >
               Add to journey
             </button>
@@ -140,7 +144,7 @@
 
           <!-- Balanced -->
           <article
-            class="group flex cursor-pointer flex-col justify-between rounded-2xl border border-slate-100 bg-white/80 p-4 shadow-sm shadow-amber-100/50 transition hover:-translate-y-1 hover:border-indigo-200 hover:shadow-md"
+            class="group relative flex cursor-pointer flex-col justify-between rounded-2xl border border-slate-100/80 bg-white/80 p-4 shadow-sm shadow-amber-100/50 transition transform duration-200 ease-out hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-100/70"
             data-category="basics"
             data-id="trip-style-balanced"
             data-price="700"
@@ -154,7 +158,7 @@
               </p>
             </div>
             <button
-              class="mt-4 inline-flex items-center justify-center rounded-full bg-slate-900 px-3 py-1.5 text-[11px] font-semibold text-amber-50 group-hover:bg-indigo-700"
+              class="mt-4 inline-flex items-center justify-center rounded-full bg-slate-900 px-3 py-1.5 text-[11px] font-semibold text-amber-50 transition-colors duration-150 group-hover:bg-indigo-700"
             >
               Add to journey
             </button>
@@ -162,7 +166,7 @@
 
           <!-- Packed -->
           <article
-            class="group flex cursor-pointer flex-col justify-between rounded-2xl border border-slate-100 bg-white/80 p-4 shadow-sm shadow-amber-100/50 transition hover:-translate-y-1 hover:border-indigo-200 hover:shadow-md"
+            class="group relative flex cursor-pointer flex-col justify-between rounded-2xl border border-slate-100/80 bg-white/80 p-4 shadow-sm shadow-amber-100/50 transition transform duration-200 ease-out hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-100/70"
             data-category="basics"
             data-id="trip-style-packed"
             data-price="900"
@@ -176,7 +180,7 @@
               </p>
             </div>
             <button
-              class="mt-4 inline-flex items-center justify-center rounded-full bg-slate-900 px-3 py-1.5 text-[11px] font-semibold text-amber-50 group-hover:bg-indigo-700"
+              class="mt-4 inline-flex items-center justify-center rounded-full bg-slate-900 px-3 py-1.5 text-[11px] font-semibold text-amber-50 transition-colors duration-150 group-hover:bg-indigo-700"
             >
               Add to journey
             </button>
@@ -184,7 +188,7 @@
         </div>
 
         <!-- Controls -->
-        <div class="mt-4 grid gap-4 rounded-2xl border border-slate-100 bg-white/80 p-4 shadow-sm md:grid-cols-2">
+        <div class="mt-4 grid gap-4 rounded-2xl border border-slate-100 bg-white/90 p-4 shadow-sm md:grid-cols-2">
           <div class="space-y-1">
             <label for="num-days" class="text-xs font-medium text-slate-700">
               Number of days
@@ -216,13 +220,18 @@
         </div>
       </div>
 
-      <!-- Placeholder: more card groups (arrivals, stays, themes, activities, food, mobility, souvenirs) go here -->
+      <!-- Placeholder: more card groups to be added by you -->
 
       <!-- Explorer summary & checkout -->
-      <section class="mt-10 space-y-4 rounded-2xl border border-slate-100 bg-white/90 p-5 shadow-sm">
-        <h3 class="text-base font-semibold text-slate-900">
-          Your curated journey
-        </h3>
+      <section class="mt-10 space-y-4 rounded-2xl border border-slate-100 bg-white/95 p-5 shadow-sm shadow-amber-100/60">
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="text-base font-semibold text-slate-900">
+            Your curated journey
+          </h3>
+          <span class="inline-flex items-center gap-1 rounded-full bg-amber-100/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-900">
+            à bientôt
+          </span>
+        </div>
         <p class="text-sm text-slate-600">
           A quick snapshot of everything you picked, plus the starting price.
         </p>
@@ -260,7 +269,7 @@
           </p>
           <button
             type="submit"
-            class="mt-2 inline-flex items-center justify-center rounded-full bg-indigo-600 px-6 py-2 text-xs font-semibold text-white shadow-sm shadow-indigo-500/40 hover:bg-indigo-700"
+            class="mt-2 inline-flex items-center justify-center rounded-full bg-indigo-600 px-6 py-2 text-xs font-semibold text-white shadow-sm shadow-indigo-500/40 transition duration-150 hover:bg-indigo-700 hover:shadow-md hover:ring-2 hover:ring-amber-100 hover:ring-offset-2 hover:ring-offset-white"
           >
             Request my curated plan
           </button>
@@ -279,7 +288,7 @@
         </p>
       </header>
 
-      <section class="space-y-6 rounded-2xl border border-slate-100 bg-white/90 p-5 shadow-sm">
+      <section class="space-y-6 rounded-2xl border border-slate-100 bg-white/95 p-5 shadow-sm shadow-amber-100/70">
         <div>
           <h3 class="text-sm font-semibold text-slate-900">
             Join as an experience partner
@@ -358,7 +367,7 @@
           <div class="md:col-span-2">
             <button
               type="submit"
-              class="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-2 text-xs font-semibold text-amber-50 shadow-sm shadow-slate-700/40 hover:bg-indigo-700"
+              class="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-2 text-xs font-semibold text-amber-50 shadow-sm shadow-slate-700/40 transition duration-150 hover:bg-indigo-700 hover:shadow-md hover:ring-2 hover:ring-amber-100 hover:ring-offset-2 hover:ring-offset-white"
             >
               Apply to partner
             </button>
@@ -367,7 +376,7 @@
       </section>
 
       <!-- Onboarding timeline -->
-      <section id="how-it-works" class="mt-8 rounded-2xl border border-slate-100 bg-white/90 p-5 shadow-sm">
+      <section id="how-it-works" class="mt-8 rounded-2xl border border-slate-100 bg-white/95 p-5 shadow-sm shadow-amber-100/80">
         <h3 class="text-sm font-semibold text-slate-900">
           How onboarding works
         </h3>
@@ -381,9 +390,9 @@
     </section>
   </main>
 
-  <footer class="border-t border-amber-100 bg-amber-50/70 py-4">
+  <footer class="border-t border-amber-100 bg-amber-50/80 py-4">
     <p class="mx-auto max-w-6xl px-4 text-xs text-slate-600 md:px-8">
-      &copy; Pondy Curations · French‑Indian soul, built for explorers and hosts.
+      &copy; Pondy Curations · Une petite touche française by the Bay of Bengal.
     </p>
   </footer>
 
@@ -394,7 +403,7 @@
     const cards = document.querySelectorAll('[data-category][data-id]');
 
     const state = {
-      selected: {}, // key: data-id, value: {title, price}
+      selected: {},
       baseTotal: 0,
     };
 
@@ -414,40 +423,55 @@
 
     function renderSummary() {
       summaryList.innerHTML = '';
-      Object.values(state.selected).forEach(item => {
+      const entries = Object.values(state.selected);
+      if (!entries.length) {
+        const li = document.createElement('li');
+        li.textContent = 'No experiences selected yet. Start with a trip style above.';
+        summaryList.appendChild(li);
+        return;
+      }
+      entries.forEach(item => {
         const li = document.createElement('li');
         li.textContent = item.title + ' · ' + formatAmount(item.price);
         summaryList.appendChild(li);
       });
-      if (!Object.keys(state.selected).length) {
-        const li = document.createElement('li');
-        li.textContent = 'No experiences selected yet. Start with a trip style above.';
-        summaryList.appendChild(li);
-      }
     }
 
     cards.forEach(card => {
       const btn = card.querySelector('button');
       const price = parseInt(card.getAttribute('data-price') || '0', 10);
-      const title = card.querySelector('h3')?.textContent?.trim() ||
-                    card.querySelector('h4')?.textContent?.trim() || 'Selection';
+      const title =
+        card.querySelector('h3')?.textContent?.trim() ||
+        card.querySelector('h4')?.textContent?.trim() ||
+        'Selection';
 
       function toggleCard() {
         const id = card.getAttribute('data-id');
         const isSelected = card.classList.contains('ring-2');
 
         if (isSelected) {
-          card.classList.remove('ring-2', 'ring-indigo-400', 'bg-indigo-50/40');
+          card.classList.remove(
+            'ring-2',
+            'ring-indigo-400',
+            'ring-offset-2',
+            'ring-offset-amber-50',
+            'bg-indigo-50/60'
+          );
           delete state.selected[id];
         } else {
-          card.classList.add('ring-2', 'ring-indigo-400', 'bg-indigo-50/40');
+          card.classList.add(
+            'ring-2',
+            'ring-indigo-400',
+            'ring-offset-2',
+            'ring-offset-amber-50',
+            'bg-indigo-50/60'
+          );
           state.selected[id] = { title, price };
         }
         recalcTotal();
       }
 
       card.addEventListener('click', (e) => {
-        // Avoid double triggers if button clicked
         if (e.target.tagName.toLowerCase() === 'button') {
           e.preventDefault();
         }
@@ -462,7 +486,6 @@
       }
     });
 
-    // Initial summary
     renderSummary();
   </script>
 </body>
