@@ -20,57 +20,51 @@
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-left">
-          <span class="hero-tag">
-            <span class="hero-tag-dot"></span>
-            Pondicherry · French fantasy
-          </span>
-          <h1>Curate your own <span class="hero-highlight">Pondicherry story</span></h1>
-          <p class="hero-text">
-            Handpicked stays, storytellers, sea‑breeze evenings and coffee‑lit lanes –
-            stitched into one bespoke journey, just for you.
-          </p>
-          <div class="hero-actions">
-            <button class="btn btn-primary" onclick="scrollToId('explorer-section')">
-              I want to explore
-            </button>
-            <button class="btn btn-secondary" onclick="scrollToId('host-section')">
-              I want to host &amp; partner
-            </button>
-          </div>
-          <p class="hero-note">
-            Responsive from the first pixel – crafted for mobiles, laptops, and everything in between.
-          </p>
+    <!-- Landing choice -->
+    <section class="landing" id="landing">
+      <div class="landing-inner">
+        <div class="landing-left">
+          <!-- image1: hero / collage of White Town + sea -->
+          <!-- image1 -->
+          <span>image1: landing hero (French Quarter + sea)</span>
         </div>
+        <div class="landing-right">
+          <h1>Welcome to Pondy Curations</h1>
+          <p>
+            Choose how you wish to be part of Pondicherry – explore as a guest, or host as a partner.
+          </p>
 
-        <div class="hero-right">
-          <div class="hero-card-wrap">
-            <div class="hero-card-glow"></div>
-            <div class="hero-card">
-              <div class="hero-pill">
-                <span class="hero-pill-dot"></span>
-                Live trip concierge
+          <div class="landing-options">
+            <button class="landing-card" onclick="openMode('explorer')">
+              <!-- image2: small icon for explorer (suitcase / compass) -->
+              <!-- image2 -->
+              <div class="landing-card-text">
+                <h2>I want to explore</h2>
+                <p>Create a bespoke trip through French lanes, beaches, cafés and surprises.</p>
               </div>
-              <h2>White Town mornings, sea‑breeze nights</h2>
-              <p>
-                Choose your mood – heritage walks, cafés, beaches, or surprises – and watch a curated Pondy
-                itinerary assemble itself in real time.
-              </p>
-              <div class="hero-card-footer">
-                <span>Start from a tiny curation fee</span>
-                <span class="hero-chip">bon voyage</span>
+            </button>
+
+            <button class="landing-card" onclick="openMode('host')">
+              <!-- image3: small icon for host (keys / house / cloche) -->
+              <!-- image3 -->
+              <div class="landing-card-text">
+                <h2>I want to host &amp; partner</h2>
+                <p>List your stays, tours or cafés as curated experiences for explorers.</p>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Explorer section -->
-    <section id="explorer-section" class="explorer">
+    <!-- Explorer "page" -->
+    <section id="explorer-section" class="explorer mode-section hidden">
+      <div class="image-banner">
+        <!-- image4: explorer header image (heritage + beach) -->
+        <!-- image4 -->
+        <span>image4: Explorer header (heritage town + beach)</span>
+      </div>
+
       <!-- Trip total bar -->
       <div class="trip-total-bar">
         <div class="trip-total-text">
@@ -102,6 +96,8 @@
             data-id="trip-style-chill"
             data-price="500"
           >
+            <!-- image6: small background visual for "Slow & dreamy" (coffee / lane) -->
+            <!-- image6 -->
             <div class="card-body">
               <h3>Slow &amp; dreamy</h3>
               <p>
@@ -118,6 +114,8 @@
             data-id="trip-style-balanced"
             data-price="700"
           >
+            <!-- image7: balanced mix visual (heritage + beach + café) -->
+            <!-- image7 -->
             <div class="card-body">
               <h3>Balanced &amp; breezy</h3>
               <p>
@@ -134,6 +132,8 @@
             data-id="trip-style-packed"
             data-price="900"
           >
+            <!-- image8: energetic visual (sunrise walk / night street) -->
+            <!-- image8 -->
             <div class="card-body">
               <h3>All‑out explorer</h3>
               <p>
@@ -167,7 +167,7 @@
         </div>
       </section>
 
-      <!-- Placeholder: you will add more card groups here -->
+      <!-- Placeholder: more explorer card groups to be added later -->
 
       <!-- Explorer summary & checkout -->
       <section class="summary-block">
@@ -213,8 +213,14 @@
       </section>
     </section>
 
-    <!-- Host & Partner section -->
-    <section id="host-section" class="host">
+    <!-- Host "page" -->
+    <section id="host-section" class="host mode-section hidden">
+      <div class="image-banner">
+        <!-- image5: host header image (villa / café / tour guide) -->
+        <!-- image5 -->
+        <span>image5: Host header (villa / café / tour)</span>
+      </div>
+
       <header class="section-header host-header">
         <div>
           <h2>For Hosts &amp; Partners</h2>
@@ -316,6 +322,36 @@
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
+
+    function openMode(mode) {
+      const landing = document.getElementById('landing');
+      const explorer = document.getElementById('explorer-section');
+      const host = document.getElementById('host-section');
+
+      if (landing) landing.classList.add('hidden');
+
+      if (mode === 'explorer' && explorer) {
+        explorer.classList.remove('hidden');
+        explorer.scrollIntoView({ behavior: 'smooth' });
+      } else if (mode === 'host' && host) {
+        host.classList.remove('hidden');
+        host.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Keep header nav working with modes
+    document.querySelectorAll('.main-nav a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href').slice(1);
+        if (targetId === 'explorer-section') {
+          e.preventDefault();
+          openMode('explorer');
+        } else if (targetId === 'host-section') {
+          e.preventDefault();
+          openMode('host');
+        }
+      });
+    });
 
     const amountEl = document.getElementById('trip-amount');
     const summaryList = document.getElementById('summary-list');
