@@ -1,86 +1,68 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Pondy Curations</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Tailwind via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="min-h-screen bg-gradient-to-b from-amber-50 via-white to-sky-50 text-slate-900">
-
+<body>
   <!-- Header -->
-  <header class="w-full border-b border-amber-100/60 bg-amber-50/70 backdrop-blur">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-8">
-      <div class="text-lg font-semibold tracking-wide text-slate-800">
-        Pondy Curations
-      </div>
-      <nav class="hidden gap-6 text-sm font-medium text-slate-700 md:flex">
-        <a href="#explorer-section" class="hover:text-indigo-600">Explore</a>
-        <a href="#host-section" class="hover:text-indigo-600">Host &amp; Partner</a>
-        <a href="#how-it-works" class="hover:text-indigo-600">How it works</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">Pondy Curations</div>
+      <nav class="main-nav">
+        <a href="#explorer-section">Explore</a>
+        <a href="#host-section">Host &amp; Partner</a>
+        <a href="#how-it-works">How it works</a>
       </nav>
     </div>
   </header>
 
   <main>
     <!-- Hero -->
-    <section class="mx-auto flex min-h-[60vh] max-w-6xl flex-col items-center gap-10 px-4 py-10 md:flex-row md:px-8 md:py-16">
-      <!-- Left: text -->
-      <div class="flex-1 space-y-6">
-        <span class="inline-flex items-center gap-2 rounded-full bg-amber-100/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-900">
-          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
-          Pondicherry · French fantasy
-        </span>
-        <h1 class="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl lg:text-5xl">
-          Curate your own
-          <span class="text-indigo-600">Pondicherry story</span>
-        </h1>
-        <p class="max-w-xl text-sm leading-relaxed text-slate-700 md:text-base">
-          Handpicked stays, storytellers, sea‑breeze evenings and coffee‑lit lanes –
-          stitched into one bespoke journey, just for you.
-        </p>
-        <div class="flex flex-col gap-3 sm:flex-row">
-          <button
-            class="inline-flex items-center justify-center rounded-full bg-indigo-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm shadow-indigo-500/40 transition duration-200 ease-out hover:bg-indigo-700 hover:shadow-md hover:shadow-indigo-500/60 hover:ring-2 hover:ring-amber-200 hover:ring-offset-2 hover:ring-offset-amber-50"
-            onclick="document.getElementById('explorer-section').scrollIntoView({behavior:'smooth'})"
-          >
-            I want to explore
-          </button>
-          <button
-            class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/80 px-6 py-2.5 text-sm font-semibold text-slate-800 shadow-sm transition duration-200 ease-out hover:border-indigo-300 hover:text-indigo-700 hover:bg-white hover:shadow-md"
-            onclick="document.getElementById('host-section').scrollIntoView({behavior:'smooth'})"
-          >
-            I want to host &amp; partner
-          </button>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <span class="hero-tag">
+            <span class="hero-tag-dot"></span>
+            Pondicherry · French fantasy
+          </span>
+          <h1>Curate your own <span class="hero-highlight">Pondicherry story</span></h1>
+          <p class="hero-text">
+            Handpicked stays, storytellers, sea‑breeze evenings and coffee‑lit lanes –
+            stitched into one bespoke journey, just for you.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="scrollToId('explorer-section')">
+              I want to explore
+            </button>
+            <button class="btn btn-secondary" onclick="scrollToId('host-section')">
+              I want to host &amp; partner
+            </button>
+          </div>
+          <p class="hero-note">
+            Responsive from the first pixel – crafted for mobiles, laptops, and everything in between.
+          </p>
         </div>
-        <p class="text-xs text-slate-500">
-          Responsive from the first pixel – crafted for mobiles, laptops, and everything in between.
-        </p>
-      </div>
 
-      <!-- Right: visual glass card -->
-      <div class="flex-1">
-        <div class="relative mx-auto max-w-md">
-          <div class="absolute -inset-4 -z-10 rounded-[2.25rem] bg-gradient-to-tr from-amber-200/70 via-pink-200/50 to-sky-200/60 blur-2 opacity-80"></div>
-          <div class="relative rounded-3xl border border-white/70 bg-white/70 p-6 shadow-xl shadow-amber-200/60 backdrop-blur-md">
-            <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-slate-900 text-amber-50 px-3 py-1 text-[11px] font-medium">
-              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-              Live trip concierge
-            </div>
-            <h2 class="text-lg font-semibold text-slate-900">
-              White Town mornings, sea‑breeze nights
-            </h2>
-            <p class="mt-2 text-sm text-slate-600">
-              Choose your mood – heritage walks, cafés, beaches, or surprises – and watch a curated Pondy
-              itinerary assemble itself in real time.
-            </p>
-            <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
-              <span>Start from a tiny curation fee</span>
-              <span class="inline-flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-900">
-                bon voyage
-              </span>
+        <div class="hero-right">
+          <div class="hero-card-wrap">
+            <div class="hero-card-glow"></div>
+            <div class="hero-card">
+              <div class="hero-pill">
+                <span class="hero-pill-dot"></span>
+                Live trip concierge
+              </div>
+              <h2>White Town mornings, sea‑breeze nights</h2>
+              <p>
+                Choose your mood – heritage walks, cafés, beaches, or surprises – and watch a curated Pondy
+                itinerary assemble itself in real time.
+              </p>
+              <div class="hero-card-footer">
+                <span>Start from a tiny curation fee</span>
+                <span class="hero-chip">bon voyage</span>
+              </div>
             </div>
           </div>
         </div>
@@ -88,129 +70,94 @@
     </section>
 
     <!-- Explorer section -->
-    <section id="explorer-section" class="mx-auto max-w-6xl px-4 pb-16 md:px-8">
+    <section id="explorer-section" class="explorer">
       <!-- Trip total bar -->
-      <div class="mb-6 flex flex-col items-start justify-between gap-3 rounded-2xl bg-slate-900 px-4 py-3 text-slate-100 shadow-sm shadow-slate-900/40 md:flex-row md:items-center">
-        <div class="text-sm">
+      <div class="trip-total-bar">
+        <div class="trip-total-text">
           Your curated journey starts at
-          <span id="trip-amount" class="font-semibold text-amber-300">₹0</span>
+          <span id="trip-amount" class="trip-amount">₹0</span>
         </div>
-        <button
-          id="review-journey-btn"
-          class="inline-flex items-center justify-center rounded-full bg-amber-300 px-4 py-1.5 text-xs font-semibold text-slate-900 transition duration-150 hover:bg-amber-400 hover:ring-2 hover:ring-amber-100 hover:ring-offset-2 hover:ring-offset-slate-900"
-        >
+        <button id="review-journey-btn" class="btn btn-ghost">
           Review my journey
         </button>
       </div>
 
       <!-- Trip basics -->
-      <div class="space-y-4">
-        <div class="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+      <section class="section-block">
+        <div class="section-header">
           <div>
-            <h2 class="text-lg font-semibold text-slate-900 md:text-xl">
-              Trip basics
-            </h2>
-            <p class="text-sm text-slate-600">
-              Tell us how you like to travel – and who is coming along for the story.
-            </p>
+            <h2>Trip basics</h2>
+            <p>Tell us how you like to travel – and who is coming along for the story.</p>
           </div>
-          <p class="text-xs text-slate-500">
+          <p class="section-meta">
             Cards stack on mobile, then glide into columns on wider screens.
           </p>
         </div>
 
-        <div class="grid gap-4 md:grid-cols-3">
+        <div class="cards-grid">
           <!-- Chill -->
           <article
-            class="group relative flex cursor-pointer flex-col justify-between rounded-2xl border border-slate-100/80 bg-white/80 p-4 shadow-sm shadow-amber-100/50 transition transform duration-200 ease-out hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-100/70"
+            class="card"
             data-category="basics"
             data-id="trip-style-chill"
             data-price="500"
           >
-            <div>
-              <h3 class="mb-1 text-sm font-semibold text-slate-900">
-                Slow &amp; dreamy
-              </h3>
-              <p class="text-xs text-slate-600">
+            <div class="card-body">
+              <h3>Slow &amp; dreamy</h3>
+              <p>
                 Late mornings, long coffees, pastel lanes and unhurried sunsets by the sea.
               </p>
             </div>
-            <button
-              class="mt-4 inline-flex items-center justify-center rounded-full bg-slate-900 px-3 py-1.5 text-[11px] font-semibold text-amber-50 transition-colors duration-150 group-hover:bg-indigo-700"
-            >
-              Add to journey
-            </button>
+            <button class="btn btn-small">Add to journey</button>
           </article>
 
           <!-- Balanced -->
           <article
-            class="group relative flex cursor-pointer flex-col justify-between rounded-2xl border border-slate-100/80 bg-white/80 p-4 shadow-sm shadow-amber-100/50 transition transform duration-200 ease-out hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-100/70"
+            class="card"
             data-category="basics"
             data-id="trip-style-balanced"
             data-price="700"
           >
-            <div>
-              <h3 class="mb-1 text-sm font-semibold text-slate-900">
-                Balanced &amp; breezy
-              </h3>
-              <p class="text-xs text-slate-600">
+            <div class="card-body">
+              <h3>Balanced &amp; breezy</h3>
+              <p>
                 Heritage, beaches, cafés and markets – a gentle rhythm without the rush.
               </p>
             </div>
-            <button
-              class="mt-4 inline-flex items-center justify-center rounded-full bg-slate-900 px-3 py-1.5 text-[11px] font-semibold text-amber-50 transition-colors duration-150 group-hover:bg-indigo-700"
-            >
-              Add to journey
-            </button>
+            <button class="btn btn-small">Add to journey</button>
           </article>
 
           <!-- Packed -->
           <article
-            class="group relative flex cursor-pointer flex-col justify-between rounded-2xl border border-slate-100/80 bg-white/80 p-4 shadow-sm shadow-amber-100/50 transition transform duration-200 ease-out hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-100/70"
+            class="card"
             data-category="basics"
             data-id="trip-style-packed"
             data-price="900"
           >
-            <div>
-              <h3 class="mb-1 text-sm font-semibold text-slate-900">
-                All‑out explorer
-              </h3>
-              <p class="text-xs text-slate-600">
+            <div class="card-body">
+              <h3>All‑out explorer</h3>
+              <p>
                 From dawn promenades to midnight gelato – stack your days with stories.
               </p>
             </div>
-            <button
-              class="mt-4 inline-flex items-center justify-center rounded-full bg-slate-900 px-3 py-1.5 text-[11px] font-semibold text-amber-50 transition-colors duration-150 group-hover:bg-indigo-700"
-            >
-              Add to journey
-            </button>
+            <button class="btn btn-small">Add to journey</button>
           </article>
         </div>
 
         <!-- Controls -->
-        <div class="mt-4 grid gap-4 rounded-2xl border border-slate-100 bg-white/90 p-4 shadow-sm md:grid-cols-2">
-          <div class="space-y-1">
-            <label for="num-days" class="text-xs font-medium text-slate-700">
-              Number of days
-            </label>
-            <select
-              id="num-days"
-              class="w-full rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-800 focus:border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-300"
-            >
+        <div class="controls-grid">
+          <div class="control">
+            <label for="num-days">Number of days</label>
+            <select id="num-days">
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4–5</option>
               <option value="6">6+</option>
             </select>
           </div>
-          <div class="space-y-1">
-            <label for="num-explorers" class="text-xs font-medium text-slate-700">
-              Number of explorers
-            </label>
-            <select
-              id="num-explorers"
-              class="w-full rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-800 focus:border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-300"
-            >
+          <div class="control">
+            <label for="num-explorers">Number of explorers</label>
+            <select id="num-explorers">
               <option value="1">Solo</option>
               <option value="2">Duo</option>
               <option value="4">3–5</option>
@@ -218,59 +165,48 @@
             </select>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Placeholder: more card groups to be added by you -->
+      <!-- Placeholder: you will add more card groups here -->
 
       <!-- Explorer summary & checkout -->
-      <section class="mt-10 space-y-4 rounded-2xl border border-slate-100 bg-white/95 p-5 shadow-sm shadow-amber-100/60">
-        <div class="flex items-center justify-between gap-2">
-          <h3 class="text-base font-semibold text-slate-900">
-            Your curated journey
-          </h3>
-          <span class="inline-flex items-center gap-1 rounded-full bg-amber-100/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-900">
-            à bientôt
-          </span>
+      <section class="summary-block">
+        <div class="summary-header">
+          <h3>Your curated journey</h3>
+          <span class="hero-chip small">à bientôt</span>
         </div>
-        <p class="text-sm text-slate-600">
+        <p class="summary-text">
           A quick snapshot of everything you picked, plus the starting price.
         </p>
-        <ul id="summary-list" class="mb-4 list-disc space-y-1 pl-5 text-xs text-slate-700">
+        <ul id="summary-list" class="summary-list">
           <!-- Filled by JS -->
         </ul>
 
-        <form class="space-y-3 text-sm">
-          <h4 class="text-sm font-semibold text-slate-900">Almost there</h4>
-          <p class="text-xs text-slate-600">
+        <form class="checkout-form">
+          <h4>Almost there</h4>
+          <p class="checkout-note">
             Share your details so the concierge team can refine, match partners, and share options.
           </p>
-          <label class="block">
-            <span class="mb-1 block text-xs font-medium text-slate-700">Name</span>
-            <input type="text" name="name" required
-                   class="w-full rounded-full border border-slate-200 px-3 py-1.5 text-xs text-slate-800 focus:border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-300">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required>
           </label>
-          <label class="block">
-            <span class="mb-1 block text-xs font-medium text-slate-700">Email</span>
-            <input type="email" name="email" required
-                   class="w-full rounded-full border border-slate-200 px-3 py-1.5 text-xs text-slate-800 focus:border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-300">
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required>
           </label>
-          <label class="block">
-            <span class="mb-1 block text-xs font-medium text-slate-700">Phone / WhatsApp</span>
-            <input type="tel" name="phone" required
-                   class="w-full rounded-full border border-slate-200 px-3 py-1.5 text-xs text-slate-800 focus:border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-300">
+          <label>
+            <span>Phone / WhatsApp</span>
+            <input type="tel" name="phone" required>
           </label>
-          <label class="block">
-            <span class="mb-1 block text-xs font-medium text-slate-700">Tentative dates</span>
-            <input type="text" name="dates" placeholder="e.g., 14–17 March"
-                   class="w-full rounded-full border border-slate-200 px-3 py-1.5 text-xs text-slate-800 focus:border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-300">
+          <label>
+            <span>Tentative dates</span>
+            <input type="text" name="dates" placeholder="e.g., 14–17 March">
           </label>
-          <p class="text-[11px] text-slate-500">
+          <p class="fee-note">
             Curation fee: ₹9 – supports human verification, safety checks, and personalised planning.
           </p>
-          <button
-            type="submit"
-            class="mt-2 inline-flex items-center justify-center rounded-full bg-indigo-600 px-6 py-2 text-xs font-semibold text-white shadow-sm shadow-indigo-500/40 transition duration-150 hover:bg-indigo-700 hover:shadow-md hover:ring-2 hover:ring-amber-100 hover:ring-offset-2 hover:ring-offset-white"
-          >
+          <button type="submit" class="btn btn-primary wide">
             Request my curated plan
           </button>
         </form>
@@ -278,37 +214,33 @@
     </section>
 
     <!-- Host & Partner section -->
-    <section id="host-section" class="mx-auto max-w-6xl px-4 pb-16 md:px-8">
-      <header class="mb-6">
-        <h2 class="text-lg font-semibold text-slate-900 md:text-xl">
-          For Hosts &amp; Partners
-        </h2>
-        <p class="mt-1 text-sm text-slate-600">
-          List your stays, tours, cafés, or experiences in a curated, quality‑first Pondicherry marketplace.
-        </p>
+    <section id="host-section" class="host">
+      <header class="section-header host-header">
+        <div>
+          <h2>For Hosts &amp; Partners</h2>
+          <p>
+            List your stays, tours, cafés, or experiences in a curated, quality‑first Pondicherry marketplace.
+          </p>
+        </div>
       </header>
 
-      <section class="space-y-6 rounded-2xl border border-slate-100 bg-white/95 p-5 shadow-sm shadow-amber-100/70">
-        <div>
-          <h3 class="text-sm font-semibold text-slate-900">
-            Join as an experience partner
-          </h3>
-          <p class="mt-1 text-xs text-slate-600">
+      <section class="host-card">
+        <div class="host-intro">
+          <h3>Join as an experience partner</h3>
+          <p>
             A simple onboarding, careful verification, and then your offering appears in tailored itineraries.
           </p>
         </div>
 
-        <form class="grid gap-3 text-sm md:grid-cols-2">
-          <label class="md:col-span-2">
-            <span class="mb-1 block text-xs font-medium text-slate-700">Business / brand name</span>
-            <input type="text" name="brand" required
-                   class="w-full rounded-full border border-slate-200 px-3 py-1.5 text-xs text-slate-800 focus:border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-300">
+        <form class="host-form">
+          <label class="full">
+            <span>Business / brand name</span>
+            <input type="text" name="brand" required>
           </label>
 
           <label>
-            <span class="mb-1 block text-xs font-medium text-slate-700">Type of service</span>
-            <select name="service-type" required
-                    class="w-full rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-800 focus:border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-300">
+            <span>Type of service</span>
+            <select name="service-type" required>
               <option value="">Select one</option>
               <option value="stay">Stay (villa, hotel, homestay)</option>
               <option value="tour">Tour &amp; activity</option>
@@ -321,160 +253,126 @@
           </label>
 
           <label>
-            <span class="mb-1 block text-xs font-medium text-slate-700">Location / area</span>
-            <input type="text" name="location" required
-                   placeholder="White Town, ECR, Auroville side, etc."
-                   class="w-full rounded-full border border-slate-200 px-3 py-1.5 text-xs text-slate-800 focus:border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-300">
+            <span>Location / area</span>
+            <input type="text" name="location" required placeholder="White Town, ECR, Auroville side, etc.">
           </label>
 
-          <label class="md:col-span-2">
-            <span class="mb-1 block text-xs font-medium text-slate-700">Short description</span>
-            <textarea name="description" rows="3"
-                      class="w-full rounded-2xl border border-slate-200 px-3 py-2 text-xs text-slate-800 focus:border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-300"
-                      placeholder="Tell explorers what makes this special."></textarea>
+          <label class="full">
+            <span>Short description</span>
+            <textarea name="description" rows="3" placeholder="Tell explorers what makes this special."></textarea>
           </label>
 
           <label>
-            <span class="mb-1 block text-xs font-medium text-slate-700">Typical pricing</span>
-            <input type="text" name="pricing"
-                   placeholder="e.g., ₹4000 per night, ₹1500 per person"
-                   class="w-full rounded-full border border-slate-200 px-3 py-1.5 text-xs text-slate-800 focus:border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-300">
+            <span>Typical pricing</span>
+            <input type="text" name="pricing" placeholder="e.g., ₹4000 per night, ₹1500 per person">
           </label>
 
           <label>
-            <span class="mb-1 block text-xs font-medium text-slate-700">Website / Instagram</span>
-            <input type="url" name="social" placeholder="https://"
-                   class="w-full rounded-full border border-slate-200 px-3 py-1.5 text-xs text-slate-800 focus:border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-300">
+            <span>Website / Instagram</span>
+            <input type="url" name="social" placeholder="https://">
           </label>
 
           <label>
-            <span class="mb-1 block text-xs font-medium text-slate-700">Contact email</span>
-            <input type="email" name="email" required
-                   class="w-full rounded-full border border-slate-200 px-3 py-1.5 text-xs text-slate-800 focus:border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-300">
+            <span>Contact email</span>
+            <input type="email" name="email" required>
           </label>
 
           <label>
-            <span class="mb-1 block text-xs font-medium text-slate-700">Phone / WhatsApp</span>
-            <input type="tel" name="phone" required
-                   class="w-full rounded-full border border-slate-200 px-3 py-1.5 text-xs text-slate-800 focus:border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-300">
+            <span>Phone / WhatsApp</span>
+            <input type="tel" name="phone" required>
           </label>
 
-          <p class="md:col-span-2 text-[11px] text-slate-500">
+          <p class="host-note full">
             After you submit, our onboarding team will reach out, verify details, discuss pricing,
             and then bring you on board as a featured partner.
           </p>
 
-          <div class="md:col-span-2">
-            <button
-              type="submit"
-              class="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-2 text-xs font-semibold text-amber-50 shadow-sm shadow-slate-700/40 transition duration-150 hover:bg-indigo-700 hover:shadow-md hover:ring-2 hover:ring-amber-100 hover:ring-offset-2 hover:ring-offset-white"
-            >
+          <div class="host-actions full">
+            <button type="submit" class="btn btn-dark">
               Apply to partner
             </button>
           </div>
         </form>
       </section>
 
-      <!-- Onboarding timeline -->
-      <section id="how-it-works" class="mt-8 rounded-2xl border border-slate-100 bg-white/95 p-5 shadow-sm shadow-amber-100/80">
-        <h3 class="text-sm font-semibold text-slate-900">
-          How onboarding works
-        </h3>
-        <ol class="mt-3 space-y-2 text-xs text-slate-700">
-          <li><span class="font-semibold">1 · Apply</span> – share your offering, location, and basic pricing.</li>
-          <li><span class="font-semibold">2 · Verify</span> – we run checks, talk to you, and review quality.</li>
-          <li><span class="font-semibold">3 · Curate</span> – your service is mapped to matching explorer profiles.</li>
-          <li><span class="font-semibold">4 · Delight</span> – host explorers and become part of their Pondy story.</li>
+      <section id="how-it-works" class="timeline">
+        <h3>How onboarding works</h3>
+        <ol>
+          <li><strong>1 · Apply</strong> – share your offering, location, and basic pricing.</li>
+          <li><strong>2 · Verify</strong> – we run checks, talk to you, and review quality.</li>
+          <li><strong>3 · Curate</strong> – your service is mapped to matching explorer profiles.</li>
+          <li><strong>4 · Delight</strong> – host explorers and become part of their Pondy story.</li>
         </ol>
       </section>
     </section>
   </main>
 
-  <footer class="border-t border-amber-100 bg-amber-50/80 py-4">
-    <p class="mx-auto max-w-6xl px-4 text-xs text-slate-600 md:px-8">
-      &copy; Pondy Curations · Une petite touche française by the Bay of Bengal.
-    </p>
+  <footer class="site-footer">
+    <p>&copy; Pondy Curations · Une petite touche française by the Bay of Bengal.</p>
   </footer>
 
-  <!-- Minimal JS: card select + price + summary -->
   <script>
+    function scrollToId(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
     const amountEl = document.getElementById('trip-amount');
     const summaryList = document.getElementById('summary-list');
-    const cards = document.querySelectorAll('[data-category][data-id]');
+    const cards = document.querySelectorAll('.card[data-category][data-id]');
 
-    const state = {
-      selected: {},
-      baseTotal: 0,
-    };
+    const state = { selected: {}, baseTotal: 0 };
 
     function formatAmount(v) {
       return '₹' + v.toString();
     }
 
-    function recalcTotal() {
-      let total = 0;
-      Object.values(state.selected).forEach(item => {
-        total += item.price;
-      });
-      state.baseTotal = total;
-      amountEl.textContent = formatAmount(total);
-      renderSummary();
-    }
-
     function renderSummary() {
       summaryList.innerHTML = '';
-      const entries = Object.values(state.selected);
-      if (!entries.length) {
+      const items = Object.values(state.selected);
+      if (!items.length) {
         const li = document.createElement('li');
         li.textContent = 'No experiences selected yet. Start with a trip style above.';
         summaryList.appendChild(li);
         return;
       }
-      entries.forEach(item => {
+      items.forEach(item => {
         const li = document.createElement('li');
         li.textContent = item.title + ' · ' + formatAmount(item.price);
         summaryList.appendChild(li);
       });
     }
 
+    function recalcTotal() {
+      let total = 0;
+      Object.values(state.selected).forEach(item => total += item.price);
+      state.baseTotal = total;
+      amountEl.textContent = formatAmount(total);
+      renderSummary();
+    }
+
     cards.forEach(card => {
-      const btn = card.querySelector('button');
+      const btn = card.querySelector('.btn-small');
       const price = parseInt(card.getAttribute('data-price') || '0', 10);
-      const title =
-        card.querySelector('h3')?.textContent?.trim() ||
-        card.querySelector('h4')?.textContent?.trim() ||
-        'Selection';
+      const heading = card.querySelector('h3') || card.querySelector('h4');
+      const title = heading ? heading.textContent.trim() : 'Selection';
 
       function toggleCard() {
         const id = card.getAttribute('data-id');
-        const isSelected = card.classList.contains('ring-2');
+        const isSelected = card.classList.contains('card-selected');
 
         if (isSelected) {
-          card.classList.remove(
-            'ring-2',
-            'ring-indigo-400',
-            'ring-offset-2',
-            'ring-offset-amber-50',
-            'bg-indigo-50/60'
-          );
+          card.classList.remove('card-selected');
           delete state.selected[id];
         } else {
-          card.classList.add(
-            'ring-2',
-            'ring-indigo-400',
-            'ring-offset-2',
-            'ring-offset-amber-50',
-            'bg-indigo-50/60'
-          );
+          card.classList.add('card-selected');
           state.selected[id] = { title, price };
         }
         recalcTotal();
       }
 
       card.addEventListener('click', (e) => {
-        if (e.target.tagName.toLowerCase() === 'button') {
-          e.preventDefault();
-        }
+        if (e.target.tagName.toLowerCase() === 'button') e.preventDefault();
         toggleCard();
       });
 
