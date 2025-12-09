@@ -1,426 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page-landing">
 <head>
   <meta charset="UTF-8">
-  <title>Pondy Curations</title>
+  <title>Pondy Curations · Landing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
+  <!-- Navbar -->
   <header class="site-header">
     <div class="header-inner">
       <div class="logo">Pondy Curations</div>
       <nav class="main-nav">
-        <a href="#explorer-section">Explore</a>
-        <a href="#host-section">Host &amp; Partner</a>
-        <a href="#how-it-works">How it works</a>
+        <a href="index.html">Home</a>
+        <a href="explorer.html">Explore</a>
+        <a href="host.html">Host &amp; Partner</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Landing choice -->
-    <section class="landing" id="landing">
+    <section class="landing">
       <div class="landing-inner">
         <div class="landing-left">
           <!-- image1: hero / collage of White Town + sea -->
           <!-- image1 -->
-          <span>image1: landing hero (French Quarter + sea)</span>
+          <span>image1: White Town facades + sea gradient</span>
         </div>
+
         <div class="landing-right">
           <h1>Welcome to Pondy Curations</h1>
           <p>
-            Choose how you wish to be part of Pondicherry – explore as a guest, or host as a partner.
+            A French‑kissed, sea‑breeze concierge connecting explorers with handpicked hosts across Pondicherry.
           </p>
 
           <div class="landing-options">
-            <button class="landing-card" onclick="openMode('explorer')">
-              <!-- image2: small icon for explorer (suitcase / compass) -->
-              <!-- image2 -->
+            <button class="landing-card" onclick="window.location.href='explorer.html'">
+              <div class="landing-card-icon">
+                <!-- image2: explorer icon -->
+                <!-- image2 -->
+                ✈
+              </div>
               <div class="landing-card-text">
                 <h2>I want to explore</h2>
                 <p>Create a bespoke trip through French lanes, beaches, cafés and surprises.</p>
               </div>
             </button>
 
-            <button class="landing-card" onclick="openMode('host')">
-              <!-- image3: small icon for host (keys / house / cloche) -->
-              <!-- image3 -->
+            <button class="landing-card" onclick="window.location.href='host.html'">
+              <div class="landing-card-icon">
+                <!-- image3: host icon -->
+                <!-- image3 -->
+                🏡
+              </div>
               <div class="landing-card-text">
                 <h2>I want to host &amp; partner</h2>
-                <p>List your stays, tours or cafés as curated experiences for explorers.</p>
+                <p>List your villas, cafés, tours or services for curated Pondy journeys.</p>
               </div>
             </button>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Explorer "page" -->
-    <section id="explorer-section" class="explorer mode-section hidden">
-      <div class="image-banner">
-        <!-- image4: explorer header image (heritage + beach) -->
-        <!-- image4 -->
-        <span>image4: Explorer header (heritage town + beach)</span>
-      </div>
-
-      <!-- Trip total bar -->
-      <div class="trip-total-bar">
-        <div class="trip-total-text">
-          Your curated journey starts at
-          <span id="trip-amount" class="trip-amount">₹0</span>
-        </div>
-        <button id="review-journey-btn" class="btn btn-ghost">
-          Review my journey
-        </button>
-      </div>
-
-      <!-- Trip basics -->
-      <section class="section-block">
-        <div class="section-header">
-          <div>
-            <h2>Trip basics</h2>
-            <p>Tell us how you like to travel – and who is coming along for the story.</p>
-          </div>
-          <p class="section-meta">
-            Cards stack on mobile, then glide into columns on wider screens.
-          </p>
-        </div>
-
-        <div class="cards-grid">
-          <!-- Chill -->
-          <article
-            class="card"
-            data-category="basics"
-            data-id="trip-style-chill"
-            data-price="500"
-          >
-            <!-- image6: small background visual for "Slow & dreamy" (coffee / lane) -->
-            <!-- image6 -->
-            <div class="card-body">
-              <h3>Slow &amp; dreamy</h3>
-              <p>
-                Late mornings, long coffees, pastel lanes and unhurried sunsets by the sea.
-              </p>
-            </div>
-            <button class="btn btn-small">Add to journey</button>
-          </article>
-
-          <!-- Balanced -->
-          <article
-            class="card"
-            data-category="basics"
-            data-id="trip-style-balanced"
-            data-price="700"
-          >
-            <!-- image7: balanced mix visual (heritage + beach + café) -->
-            <!-- image7 -->
-            <div class="card-body">
-              <h3>Balanced &amp; breezy</h3>
-              <p>
-                Heritage, beaches, cafés and markets – a gentle rhythm without the rush.
-              </p>
-            </div>
-            <button class="btn btn-small">Add to journey</button>
-          </article>
-
-          <!-- Packed -->
-          <article
-            class="card"
-            data-category="basics"
-            data-id="trip-style-packed"
-            data-price="900"
-          >
-            <!-- image8: energetic visual (sunrise walk / night street) -->
-            <!-- image8 -->
-            <div class="card-body">
-              <h3>All‑out explorer</h3>
-              <p>
-                From dawn promenades to midnight gelato – stack your days with stories.
-              </p>
-            </div>
-            <button class="btn btn-small">Add to journey</button>
-          </article>
-        </div>
-
-        <!-- Controls -->
-        <div class="controls-grid">
-          <div class="control">
-            <label for="num-days">Number of days</label>
-            <select id="num-days">
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4–5</option>
-              <option value="6">6+</option>
-            </select>
-          </div>
-          <div class="control">
-            <label for="num-explorers">Number of explorers</label>
-            <select id="num-explorers">
-              <option value="1">Solo</option>
-              <option value="2">Duo</option>
-              <option value="4">3–5</option>
-              <option value="6">6+</option>
-            </select>
-          </div>
-        </div>
-      </section>
-
-      <!-- Placeholder: more explorer card groups to be added later -->
-
-      <!-- Explorer summary & checkout -->
-      <section class="summary-block">
-        <div class="summary-header">
-          <h3>Your curated journey</h3>
-          <span class="hero-chip small">à bientôt</span>
-        </div>
-        <p class="summary-text">
-          A quick snapshot of everything you picked, plus the starting price.
-        </p>
-        <ul id="summary-list" class="summary-list">
-          <!-- Filled by JS -->
-        </ul>
-
-        <form class="checkout-form">
-          <h4>Almost there</h4>
-          <p class="checkout-note">
-            Share your details so the concierge team can refine, match partners, and share options.
-          </p>
-          <label>
-            <span>Name</span>
-            <input type="text" name="name" required>
-          </label>
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" required>
-          </label>
-          <label>
-            <span>Phone / WhatsApp</span>
-            <input type="tel" name="phone" required>
-          </label>
-          <label>
-            <span>Tentative dates</span>
-            <input type="text" name="dates" placeholder="e.g., 14–17 March">
-          </label>
-          <p class="fee-note">
-            Curation fee: ₹9 – supports human verification, safety checks, and personalised planning.
-          </p>
-          <button type="submit" class="btn btn-primary wide">
-            Request my curated plan
-          </button>
-        </form>
-      </section>
-    </section>
-
-    <!-- Host "page" -->
-    <section id="host-section" class="host mode-section hidden">
-      <div class="image-banner">
-        <!-- image5: host header image (villa / café / tour guide) -->
-        <!-- image5 -->
-        <span>image5: Host header (villa / café / tour)</span>
-      </div>
-
-      <header class="section-header host-header">
-        <div>
-          <h2>For Hosts &amp; Partners</h2>
-          <p>
-            List your stays, tours, cafés, or experiences in a curated, quality‑first Pondicherry marketplace.
-          </p>
-        </div>
-      </header>
-
-      <section class="host-card">
-        <div class="host-intro">
-          <h3>Join as an experience partner</h3>
-          <p>
-            A simple onboarding, careful verification, and then your offering appears in tailored itineraries.
-          </p>
-        </div>
-
-        <form class="host-form">
-          <label class="full">
-            <span>Business / brand name</span>
-            <input type="text" name="brand" required>
-          </label>
-
-          <label>
-            <span>Type of service</span>
-            <select name="service-type" required>
-              <option value="">Select one</option>
-              <option value="stay">Stay (villa, hotel, homestay)</option>
-              <option value="tour">Tour &amp; activity</option>
-              <option value="fnb">Food &amp; beverage</option>
-              <option value="transport">Transport</option>
-              <option value="wellness">Wellness &amp; spa</option>
-              <option value="photo">Photography</option>
-              <option value="other">Other experience</option>
-            </select>
-          </label>
-
-          <label>
-            <span>Location / area</span>
-            <input type="text" name="location" required placeholder="White Town, ECR, Auroville side, etc.">
-          </label>
-
-          <label class="full">
-            <span>Short description</span>
-            <textarea name="description" rows="3" placeholder="Tell explorers what makes this special."></textarea>
-          </label>
-
-          <label>
-            <span>Typical pricing</span>
-            <input type="text" name="pricing" placeholder="e.g., ₹4000 per night, ₹1500 per person">
-          </label>
-
-          <label>
-            <span>Website / Instagram</span>
-            <input type="url" name="social" placeholder="https://">
-          </label>
-
-          <label>
-            <span>Contact email</span>
-            <input type="email" name="email" required>
-          </label>
-
-          <label>
-            <span>Phone / WhatsApp</span>
-            <input type="tel" name="phone" required>
-          </label>
-
-          <p class="host-note full">
-            After you submit, our onboarding team will reach out, verify details, discuss pricing,
-            and then bring you on board as a featured partner.
-          </p>
-
-          <div class="host-actions full">
-            <button type="submit" class="btn btn-dark">
-              Apply to partner
-            </button>
-          </div>
-        </form>
-      </section>
-
-      <section id="how-it-works" class="timeline">
-        <h3>How onboarding works</h3>
-        <ol>
-          <li><strong>1 · Apply</strong> – share your offering, location, and basic pricing.</li>
-          <li><strong>2 · Verify</strong> – we run checks, talk to you, and review quality.</li>
-          <li><strong>3 · Curate</strong> – your service is mapped to matching explorer profiles.</li>
-          <li><strong>4 · Delight</strong> – host explorers and become part of their Pondy story.</li>
-        </ol>
-      </section>
-    </section>
   </main>
 
   <footer class="site-footer">
     <p>&copy; Pondy Curations · Une petite touche française by the Bay of Bengal.</p>
   </footer>
-
-  <script>
-    function scrollToId(id) {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function openMode(mode) {
-      const landing = document.getElementById('landing');
-      const explorer = document.getElementById('explorer-section');
-      const host = document.getElementById('host-section');
-
-      if (landing) landing.classList.add('hidden');
-
-      if (mode === 'explorer' && explorer) {
-        explorer.classList.remove('hidden');
-        explorer.scrollIntoView({ behavior: 'smooth' });
-      } else if (mode === 'host' && host) {
-        host.classList.remove('hidden');
-        host.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    // Keep header nav working with modes
-    document.querySelectorAll('.main-nav a[href^="#"]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        const targetId = link.getAttribute('href').slice(1);
-        if (targetId === 'explorer-section') {
-          e.preventDefault();
-          openMode('explorer');
-        } else if (targetId === 'host-section') {
-          e.preventDefault();
-          openMode('host');
-        }
-      });
-    });
-
-    const amountEl = document.getElementById('trip-amount');
-    const summaryList = document.getElementById('summary-list');
-    const cards = document.querySelectorAll('.card[data-category][data-id]');
-
-    const state = { selected: {}, baseTotal: 0 };
-
-    function formatAmount(v) {
-      return '₹' + v.toString();
-    }
-
-    function renderSummary() {
-      summaryList.innerHTML = '';
-      const items = Object.values(state.selected);
-      if (!items.length) {
-        const li = document.createElement('li');
-        li.textContent = 'No experiences selected yet. Start with a trip style above.';
-        summaryList.appendChild(li);
-        return;
-      }
-      items.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = item.title + ' · ' + formatAmount(item.price);
-        summaryList.appendChild(li);
-      });
-    }
-
-    function recalcTotal() {
-      let total = 0;
-      Object.values(state.selected).forEach(item => total += item.price);
-      state.baseTotal = total;
-      amountEl.textContent = formatAmount(total);
-      renderSummary();
-    }
-
-    cards.forEach(card => {
-      const btn = card.querySelector('.btn-small');
-      const price = parseInt(card.getAttribute('data-price') || '0', 10);
-      const heading = card.querySelector('h3') || card.querySelector('h4');
-      const title = heading ? heading.textContent.trim() : 'Selection';
-
-      function toggleCard() {
-        const id = card.getAttribute('data-id');
-        const isSelected = card.classList.contains('card-selected');
-
-        if (isSelected) {
-          card.classList.remove('card-selected');
-          delete state.selected[id];
-        } else {
-          card.classList.add('card-selected');
-          state.selected[id] = { title, price };
-        }
-        recalcTotal();
-      }
-
-      card.addEventListener('click', (e) => {
-        if (e.target.tagName.toLowerCase() === 'button') e.preventDefault();
-        toggleCard();
-      });
-
-      if (btn) {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          toggleCard();
-        });
-      }
-    });
-
-    renderSummary();
-  </script>
 </body>
 </html>
