@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" class="page-explorer">
+<head>
+  <meta charset="UTF-8">
+  <title>Pondy Curations · Explore</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">Pondy Curations</div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="explorer.html">Explore</a>
+        <a href="host.html">Host &amp; Partner</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-wrapper">
+      <!-- Hero / About us -->
+      <section class="inner-hero">
+        <div class="inner-hero-left">
+          <span class="inner-hero-tag">
+            <span class="inner-hero-tag-dot"></span>
+            Explorers · French fantasy
+          </span>
+          <h1>Craft your Pondicherry story</h1>
+          <p>
+            From mustard‑yellow boulevards to moonlit promenades, Pondy Curations is your soft‑spoken concierge.
+            Share your mood, and we stitch together hosts, guides, and hidden corners into one elegant journey.
+          </p>
+          <div class="inner-hero-actions">
+            <button class="btn btn-primary">Start choosing experiences</button>
+            <button class="btn btn-secondary" onclick="document.getElementById('explorer-services').scrollIntoView({behavior:'smooth'})">
+              See services offered
+            </button>
+          </div>
+        </div>
+        <div class="inner-hero-right">
+          <!-- image4: Explorer header image (heritage + beach) -->
+          <!-- image4 -->
+          <span>image4: collage of French façades, promenade, and coffee</span>
+        </div>
+      </section>
+
+      <!-- Services offered (overview cards) -->
+      <section id="explorer-services" class="section-block">
+        <div class="section-header">
+          <div>
+            <h2>Services offered</h2>
+            <p>Everything you need for a classy, adventure‑filled escape around Pondicherry.</p>
+          </div>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <!-- image5: transfers visual -->
+            <!-- image5 -->
+            <div class="card-body">
+              <h3>Arrivals &amp; transfers</h3>
+              <p>Airport, rail and bus pickups woven into your itinerary, so you glide straight into holiday mode.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <!-- image6: stays visual -->
+            <!-- image6 -->
+            <div class="card-body">
+              <h3>Stays &amp; hideaways</h3>
+              <p>Heritage villas, beach resorts, and homestays filtered by vibe and neighbourhood.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <!-- image7: activities -->
+            <!-- image7 -->
+            <div class="card-body">
+              <h3>Experiences &amp; stories</h3>
+              <p>Guided walks, water adventures, yoga, photography sessions and surprise planning.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <!-- image8: food & drink -->
+            <!-- image8 -->
+            <div class="card-body">
+              <h3>Food &amp; drinks</h3>
+              <p>French cafés, Creole plates, South Indian comfort food and curated bar suggestions.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <!-- image9: movement -->
+            <!-- image9 -->
+            <div class="card-body">
+              <h3>Getting around</h3>
+              <p>Scooter rentals, cars with drivers or walk + public‑transport plans mapped to your days.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <!-- image10: souvenirs -->
+            <!-- image10 -->
+            <div class="card-body">
+              <h3>Souvenirs &amp; keepsakes</h3>
+              <p>Handpicked craft shops, art studios and gourmet stores to end your trip on a sweet note.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Q&A / preferences form (ask questions, collect details) -->
+      <section class="section-block">
+        <div class="section-header">
+          <div>
+            <h2>Tell us about your trip</h2>
+            <p>Answer a few questions so we can assemble your first curated plan and price.</p>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="text-block">
+            <h3>What we’ll ask you</h3>
+            <p>
+              Think of this like chatting with a local friend who knows every café table and sunset spot.
+            </p>
+            <ul class="bullet-list">
+              <li>Who’s coming with you and when you’re thinking of visiting.</li>
+              <li>Where you’d like to stay – French Quarter, beachside, or local neighbourhoods.</li>
+              <li>What you care about more: food, heritage, beaches, wellness, or all of it.</li>
+              <li>Your budget comfort zone and whether you prefer things chill or packed.</li>
+            </ul>
+            <p class="text-muted">
+              Based on this, we pick the lowest verified starting prices from our hosts and build a base package.
+            </p>
+          </div>
+
+          <div class="form-card">
+            <h3>Your explorer profile</h3>
+            <p>Share just enough detail to let us work a little magic behind the scenes.</p>
+
+            <form class="form-grid two">
+              <label>
+                <span>Your name</span>
+                <input type="text" name="name" required>
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" required>
+              </label>
+              <label>
+                <span>Phone / WhatsApp</span>
+                <input type="tel" name="phone" required>
+              </label>
+              <label>
+                <span>Number of explorers</span>
+                <select name="party-size">
+                  <option value="1">Solo</option>
+                  <option value="2">Duo</option>
+                  <option value="4">3–5</option>
+                  <option value="6">6+</option>
+                </select>
+              </label>
+              <label class="full">
+                <span>Tentative dates</span>
+                <input type="text" name="dates" placeholder="e.g., 14–17 March">
+              </label>
+              <label class="full">
+                <span>What kind of mood are you in?</span>
+                <textarea name="mood" rows="3" placeholder="Slow & dreamy, café‑hopping, all‑out adventure, family time…"></textarea>
+              </label>
+              <label class="full">
+                <span>Must‑have experiences</span>
+                <textarea name="musts" rows="3" placeholder="e.g., Auroville day, scuba, sunrise walk, French café trail, surprise for a friend"></textarea>
+              </label>
+
+              <p class="fee-note full">
+                Curation fee: ₹9 – powers human verification, safety checks, and a handcrafted first plan.
+              </p>
+
+              <div class="full">
+                <button type="submit" class="btn btn-primary wide">
+                  Share my preferences
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Simple selection & filtering placeholder (you’ll extend later) -->
+      <section class="section-block">
+        <div class="section-header">
+          <div>
+            <h2>Preview your curated picks</h2>
+            <p>As you refine answers, we’ll surface the most relevant stays, guides and services.</p>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="text-block">
+            <h3>Filters you’ll get</h3>
+            <ul class="bullet-list">
+              <li>Budget range and “starting from” price per explorer.</li>
+              <li>Neighbourhood (White Town, beach belt, local pockets).</li>
+              <li>Vibe filters: romantic, family, workation, wellness, adventure.</li>
+              <li>Host rating, flexibility and cancellation comfort.</li>
+            </ul>
+            <p class="text-muted">
+              Behind the scenes, we match your answers to onboarded partners and always show the lowest available
+              starting prices first.
+            </p>
+          </div>
+
+          <div class="summary-card">
+            <div class="summary-header">
+              <h3>Your running total</h3>
+              <span class="hero-chip small">à bientôt</span>
+            </div>
+            <p class="summary-text">
+              Here’s a very simple prototype: cards you select add to a base amount.
+            </p>
+
+            <div class="trip-bar">
+              <div class="trip-bar-text">
+                Starting at <span id="trip-amount" class="trip-bar-amount">₹0</span>
+              </div>
+              <button id="review-journey-btn" class="btn btn-ghost">
+                Review my journey
+              </button>
+            </div>
+
+            <div class="cards-grid">
+              <article class="card" data-category="demo" data-id="heritage-pack" data-price="1200">
+                <div class="card-body">
+                  <h3>Heritage walk &amp; café stop</h3>
+                  <p>Guided Old Town walk + coffee stop at a French‑style café.</p>
+                </div>
+                <button class="btn btn-small">Add to journey</button>
+              </article>
+              <article class="card" data-category="demo" data-id="beach-pack" data-price="900">
+                <div class="card-body">
+                  <h3>Beach morning &amp; brunch</h3>
+                  <p>Sunrise promenade + light brunch near the water.</p>
+                </div>
+                <button class="btn btn-small">Add to journey</button>
+              </article>
+              <article class="card" data-category="demo" data-id="evening-pack" data-price="1500">
+                <div class="card-body">
+                  <h3>Evening stroll &amp; supper</h3>
+                  <p>Golden‑hour walk, boutique shopping and Franco‑Tamil supper.</p>
+                </div>
+                <button class="btn btn-small">Add to journey</button>
+              </article>
+            </div>
+
+            <ul id="summary-list" class="summary-list"></ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Pondy Curations · Une petite touche française by the Bay of Bengal.</p>
+  </footer>
+
+  <script>
+    // Simple card selection + total for demo section
+    const amountEl = document.getElementById('trip-amount');
+    const summaryList = document.getElementById('summary-list');
+    const cards = document.querySelectorAll('.card[data-category][data-id]');
+
+    const state = { selected: {}, baseTotal: 0 };
+
+    function formatAmount(v) {
+      return '₹' + v.toString();
+    }
+
+    function renderSummary() {
+      if (!summaryList) return;
+      summaryList.innerHTML = '';
+      const items = Object.values(state.selected);
+      if (!items.length) {
+        const li = document.createElement('li');
+        li.textContent = 'No demo experiences selected yet. Try adding a pack above.';
+        summaryList.appendChild(li);
+        return;
+      }
+      items.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item.title + ' · ' + formatAmount(item.price);
+        summaryList.appendChild(li);
+      });
+    }
+
+    function recalcTotal() {
+      if (!amountEl) return;
+      let total = 0;
+      Object.values(state.selected).forEach(item => total += item.price);
+      state.baseTotal = total;
+      amountEl.textContent = formatAmount(total);
+      renderSummary();
+    }
+
+    cards.forEach(card => {
+      const btn = card.querySelector('.btn-small');
+      const price = parseInt(card.getAttribute('data-price') || '0', 10);
+      const heading = card.querySelector('h3') || card.querySelector('h4');
+      const title = heading ? heading.textContent.trim() : 'Selection';
+
+      function toggleCard() {
+        const id = card.getAttribute('data-id');
+        const isSelected = card.classList.contains('card-selected');
+        if (isSelected) {
+          card.classList.remove('card-selected');
+          delete state.selected[id];
+        } else {
+          card.classList.add('card-selected');
+          state.selected[id] = { title, price };
+        }
+        recalcTotal();
+      }
+
+      card.addEventListener('click', (e) => {
+        if (e.target.tagName.toLowerCase() === 'button') e.preventDefault();
+        toggleCard();
+      });
+
+      if (btn) {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          toggleCard();
+        });
+      }
+    });
+
+    renderSummary();
+  </script>
+</body>
+</html>
