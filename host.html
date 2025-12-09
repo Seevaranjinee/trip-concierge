@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="page-host">
+<head>
+  <meta charset="UTF-8">
+  <title>Pondy Curations · Host & Partner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">Pondy Curations</div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="explorer.html">Explore</a>
+        <a href="host.html">Host &amp; Partner</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-wrapper">
+      <!-- Hero / About for hosts -->
+      <section class="inner-hero">
+        <div class="inner-hero-left">
+          <span class="inner-hero-tag">
+            <span class="inner-hero-tag-dot"></span>
+            Hosts · Curated partners
+          </span>
+          <h1>Become part of Pondy’s story</h1>
+          <p>
+            Pondy Curations connects explorers with a small, carefully verified circle of stays, cafés, tour
+            operators, wellness spaces and experience creators. If you bring warmth, quality and a touch of
+            French‑Indian charm, this is for you.
+          </p>
+          <div class="inner-hero-actions">
+            <button class="btn btn-primary" onclick="document.getElementById('host-form-section').scrollIntoView({behavior:'smooth'})">
+              Apply to partner
+            </button>
+            <button class="btn btn-secondary" onclick="document.getElementById('host-about').scrollIntoView({behavior:'smooth'})">
+              How it works
+            </button>
+          </div>
+        </div>
+        <div class="inner-hero-right">
+          <!-- image11: Host header image (heritage villa / café / guide) -->
+          <!-- image11 -->
+          <span>image11: elegant villa facade / café interior / guide with guests</span>
+        </div>
+      </section>
+
+      <!-- About for hosts -->
+      <section id="host-about" class="section-block">
+        <div class="two-col">
+          <div class="text-block">
+            <h3>Why list with Pondy Curations?</h3>
+            <p>
+              This isn’t a mass marketplace. It’s a small, high‑trust circle where each partner is known by name
+              and every recommendation is intentional.
+            </p>
+            <ul class="bullet-list">
+              <li>Explorers arrive primed for quality, not just the lowest deal.</li>
+              <li>We tell your story – not just your price – through copy and curated placements.</li>
+              <li>We help match you to the right kind of guests (quiet couples, families, workations, etc.).</li>
+              <li>You get a real human to discuss pricing, visibility and feedback loops.</li>
+            </ul>
+          </div>
+
+          <div class="text-block">
+            <h3>What kind of hosts we onboard</h3>
+            <p>We are especially excited about:</p>
+            <ul class="bullet-list">
+              <li>Heritage villas, boutique hotels and character‑rich homestays.</li>
+              <li>Cafés, bistros and cloud kitchens with a strong point of view.</li>
+              <li>Guides, storytellers, photographers and wellness practitioners.</li>
+              <li>Transport and logistics partners who care about reliability and safety.</li>
+            </ul>
+            <p class="text-muted">
+              If you bring a slice of Pondicherry’s soul to guests, there’s space for you here.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Host details form -->
+      <section id="host-form-section" class="section-block">
+        <div class="section-header">
+          <div>
+            <h2>Share your details</h2>
+            <p>Tell us about your space or service. We’ll reach out to verify and onboard you.</p>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3>Host &amp; Partner application</h3>
+          <p>All fields help us understand who you are, how you operate, and how best to position you.</p>
+
+          <form class="form-grid two">
+            <label class="full">
+              <span>Business / brand name</span>
+              <input type="text" name="brand" required>
+            </label>
+
+            <label>
+              <span>Type of service</span>
+              <select name="service-type" required>
+                <option value="">Select one</option>
+                <option value="stay">Stay (villa, hotel, homestay)</option>
+                <option value="tour">Tour &amp; activity</option>
+                <option value="fnb">Food &amp; beverage</option>
+                <option value="transport">Transport</option>
+                <option value="wellness">Wellness &amp; spa</option>
+                <option value="photo">Photography</option>
+                <option value="other">Other experience</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Primary location / area</span>
+              <input type="text" name="location" required placeholder="White Town, ECR, Auroville side, etc.">
+            </label>
+
+            <label class="full">
+              <span>Short description</span>
+              <textarea name="description" rows="3" placeholder="Tell explorers what makes this special."></textarea>
+            </label>
+
+            <label>
+              <span>Typical pricing</span>
+              <input type="text" name="pricing" placeholder="e.g., ₹4000 per night, ₹1500 per person">
+            </label>
+
+            <label>
+              <span>Capacity / scale</span>
+              <input type="text" name="capacity" placeholder="e.g., 8 rooms, 20 covers, 12 seats per tour">
+            </label>
+
+            <label>
+              <span>Website / Instagram</span>
+              <input type="url" name="social" placeholder="https://">
+            </label>
+
+            <label>
+              <span>Contact email</span>
+              <input type="email" name="email" required>
+            </label>
+
+            <label>
+              <span>Phone / WhatsApp</span>
+              <input type="tel" name="phone" required>
+            </label>
+
+            <label class="full">
+              <span>Anything else we should know?</span>
+              <textarea name="extra" rows="3" placeholder="Awards, reviews, special policies, seasonal patterns…"></textarea>
+            </label>
+
+            <p class="fee-note full">
+              There is no fee to apply or be listed. A small platform fee applies per confirmed curated booking,
+              discussed transparently during onboarding.
+            </p>
+
+            <div class="full">
+              <button type="submit" class="btn btn-dark">
+                Submit application
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Onboarding steps -->
+      <section class="timeline">
+        <h3>Onboarding in four simple steps</h3>
+        <ol>
+          <li><strong>1 · Apply</strong> – share your story, photos, pricing and policies.</li>
+          <li><strong>2 · Verify</strong> – we review, visit or call, and align expectations.</li>
+          <li><strong>3 · Curate</strong> – your listing appears as part of themed journeys.</li>
+          <li><strong>4 · Delight</strong> – host explorers and receive rich, context‑aware guests.</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Pondy Curations · Une petite touche française by the Bay of Bengal.</p>
+  </footer>
+</body>
+</html>
