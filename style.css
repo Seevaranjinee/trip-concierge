@@ -1,4 +1,4 @@
-/* Global basics */
+/* ========= Global ========= */
 *,
 *::before,
 *::after {
@@ -6,7 +6,7 @@
 }
 
 html {
-  scroll-behavior: smooth; /* smooth in-page navigation */ /* [web:129][web:140] */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -18,17 +18,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+main {
+  padding-bottom: 3rem;
+}
+
 /* Utility */
 .hidden {
   display: none !important;
 }
 
-/* Layout */
-main {
-  padding-bottom: 3rem;
-}
-
-/* Header */
+/* ========= Navbar (common) ========= */
 .site-header {
   position: sticky;
   top: 0;
@@ -49,7 +48,7 @@ main {
 
 .logo {
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
 }
 
 .main-nav {
@@ -74,9 +73,10 @@ main {
   }
 }
 
-/* Landing choice */
-.landing {
-  padding: 2.5rem 1rem 2rem;
+/* ========= Landing page ========= */
+
+.page-landing main {
+  padding: 2.5rem 1rem 2.5rem;
 }
 
 .landing-inner {
@@ -101,10 +101,10 @@ main {
 
 /* image1 placeholder */
 .landing-left {
-  min-height: 180px;
-  border-radius: 1.5rem;
+  min-height: 220px;
+  border-radius: 1.7rem;
   background: rgba(255, 255, 255, 0.7);
-  border: 1px dashed rgba(148, 163, 184, 0.7);
+  border: 1px dashed rgba(148, 163, 184, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,9 +113,13 @@ main {
   text-align: center;
 }
 
+/* When you add a hero img:
+   .landing-left { background: url('images/image1.jpg') center/cover no-repeat; border-style: solid; }
+*/
+
 .landing-right h1 {
   margin: 0 0 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 .landing-right p {
@@ -130,12 +134,12 @@ main {
   gap: 0.75rem;
 }
 
-/* Landing cards */
+/* Landing choice cards */
 .landing-card {
   border: none;
   padding: 0.9rem 1rem;
   border-radius: 1.2rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(226, 232, 240, 0.9);
   box-shadow: 0 12px 26px rgba(148, 163, 184, 0.35);
   display: flex;
@@ -148,21 +152,26 @@ main {
               background-color 0.18s ease-out;
 }
 
-/* temporary icon bubble before you add real images */
-.landing-card::before {
-  content: "";
-  width: 40px;
-  height: 40px;
+/* image2 / image3 icon bubbles */
+.landing-card-icon {
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
   background: radial-gradient(circle at 30% 20%, #facc15, #4f46e5);
-  opacity: 0.9;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fefce8;
+  font-size: 1rem;
 }
+
+/* Later you can replace with real <img> inside .landing-card-icon */
 
 .landing-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 16px 32px rgba(79, 70, 229, 0.45);
-  border-color: rgba(79, 70, 229, 0.8);
+  border-color: rgba(79, 70, 229, 0.85);
   background: rgba(238, 242, 255, 0.98);
 }
 
@@ -177,66 +186,8 @@ main {
   color: #64748b;
 }
 
-/* Explorer section */
-.explorer {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 1rem 2.5rem;
-}
+/* ========= Buttons ========= */
 
-/* Host section */
-.host {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 1rem 2.5rem;
-}
-
-/* Image banners for Explorer / Host */
-.image-banner {
-  margin: 1rem 0;
-  min-height: 140px;
-  border-radius: 1.1rem;
-  border: 1px dashed rgba(148, 163, 184, 0.7);
-  background: rgba(255, 255, 255, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.78rem;
-  color: #94a3b8;
-  text-align: center;
-}
-
-/* Trip total bar */
-.trip-total-bar {
-  margin-bottom: 1.5rem;
-  padding: 0.75rem 1rem;
-  border-radius: 1rem;
-  background: #020617;
-  color: #f9fafb;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.85);
-}
-
-.trip-total-text {
-  font-size: 0.85rem;
-}
-
-.trip-amount {
-  font-weight: 600;
-  color: #facc15;
-}
-
-@media (min-width: 768px) {
-  .trip-total-bar {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
-/* Buttons */
 .btn {
   border: none;
   cursor: pointer;
@@ -257,6 +208,20 @@ main {
   background: #4338ca;
   box-shadow: 0 10px 22px rgba(79, 70, 229, 0.55);
   transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1e293b;
+  border: 1px solid #cbd5f5;
+  box-shadow: 0 4px 10px rgba(148, 163, 184, 0.35);
+}
+
+.btn-secondary:hover {
+  background: #ffffff;
+  border-color: #818cf8;
+  color: #4338ca;
+  box-shadow: 0 8px 18px rgba(148, 163, 184, 0.5);
 }
 
 .btn-ghost {
@@ -296,7 +261,93 @@ main {
   width: 100%;
 }
 
-/* Section headers */
+/* ========= Explorer / Host common layout ========= */
+
+.page-explorer main,
+.page-host main {
+  padding: 2rem 1rem 2.5rem;
+}
+
+.page-wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* Top hero/cover section for inner pages */
+.inner-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .inner-hero {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.inner-hero-left,
+.inner-hero-right {
+  flex: 1;
+}
+
+.inner-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(254, 243, 199, 0.9);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #92400e;
+}
+
+.inner-hero-tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #10b981;
+}
+
+.inner-hero h1 {
+  margin: 0.9rem 0 0.5rem;
+  font-size: 1.8rem;
+}
+
+.inner-hero p {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.inner-hero-actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* image banner placeholder on inner pages */
+.inner-hero-right {
+  min-height: 200px;
+  border-radius: 1.5rem;
+  border: 1px dashed rgba(148, 163, 184, 0.8);
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* ========= Sections, cards, blocks ========= */
+
 .section-block {
   margin-bottom: 2.5rem;
 }
@@ -332,7 +383,7 @@ main {
   }
 }
 
-/* Cards */
+/* Grid of cards */
 .cards-grid {
   display: grid;
   gap: 1rem;
@@ -378,7 +429,7 @@ main {
   color: #64748b;
 }
 
-/* Selected card */
+/* Selected card state */
 .card-selected {
   border-color: #4f46e5 !important;
   box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.6),
@@ -386,43 +437,141 @@ main {
   background: rgba(238, 242, 255, 0.95);
 }
 
-/* Controls under cards */
-.controls-grid {
-  margin-top: 1rem;
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 10px 24px rgba(248, 250, 252, 0.9);
-  padding: 1rem;
+/* Two-column info / forms */
+.two-col {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 @media (min-width: 768px) {
-  .controls-grid {
+  .two-col {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+/* Text content box */
+.text-block {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 10px 22px rgba(248, 250, 252, 0.9);
+}
+
+.text-block h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.text-block p {
+  margin: 0 0 0.4rem;
+  font-size: 0.84rem;
+  color: #64748b;
+}
+
+.text-muted {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+/* List of bullet points */
+.bullet-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+/* Simple form styling */
+.form-card {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 12px 26px rgba(148, 163, 184, 0.4);
+}
+
+.form-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.form-card p {
+  margin: 0 0 0.6rem;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.form-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .form-grid.two {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-.control label {
+.form-grid label {
   display: block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #475569;
-  margin-bottom: 0.25rem;
+  font-size: 0.78rem;
 }
 
-.control select {
+.form-grid label span {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
   width: 100%;
-  padding: 0.35rem 0.75rem;
+  padding: 0.4rem 0.75rem;
   border-radius: 999px;
   border: 1px solid #cbd5e1;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   color: #0f172a;
 }
 
-/* Summary & checkout */
-.summary-block {
+.form-grid textarea {
+  border-radius: 0.9rem;
+  resize: vertical;
+}
+
+/* Explorer total + summary (specific) */
+.trip-bar {
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  background: #020617;
+  color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.85);
+}
+
+@media (min-width: 768px) {
+  .trip-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.trip-bar-text {
+  font-size: 0.85rem;
+}
+
+.trip-bar-amount {
+  font-weight: 600;
+  color: #facc15;
+}
+
+.summary-card {
   margin-top: 2rem;
   border-radius: 1.1rem;
   background: rgba(255, 255, 255, 0.96);
@@ -443,25 +592,6 @@ main {
   font-size: 1rem;
 }
 
-.hero-chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.25rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(248, 250, 252, 0.92);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #111827;
-}
-
-.hero-chip.small {
-  font-size: 0.68rem;
-  padding: 0.2rem 0.7rem;
-}
-
 .summary-text {
   margin: 0.5rem 0;
   font-size: 0.85rem;
@@ -475,142 +605,20 @@ main {
   color: #475569;
 }
 
-/* Checkout form */
-.checkout-form h4 {
-  margin: 0.5rem 0 0.25rem;
-  font-size: 0.9rem;
-}
-
-.checkout-note {
-  margin: 0 0 0.5rem;
-  font-size: 0.75rem;
-  color: #64748b;
-}
-
-.checkout-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 0.78rem;
-}
-
-.checkout-form label span {
-  display: block;
-  margin-bottom: 0.2rem;
-  font-weight: 600;
-  color: #475569;
-}
-
-.checkout-form input {
-  width: 100%;
-  padding: 0.4rem 0.75rem;
-  border-radius: 999px;
-  border: 1px solid #cbd5e1;
-  font-size: 0.78rem;
-  color: #0f172a;
-}
-
 .fee-note {
   margin: 0.25rem 0;
   font-size: 0.7rem;
   color: #6b7280;
 }
 
-/* Host section */
-.host-header {
-  margin-bottom: 1rem;
-}
-
-.host-header h2 {
-  margin: 0 0 0.25rem;
-  font-size: 1.1rem;
-}
-
-.host-header p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #64748b;
-}
-
-.host-card {
-  border-radius: 1.1rem;
-  background: rgba(255, 255, 255, 0.97);
-  border: 1px solid rgba(226, 232, 240, 0.95);
-  box-shadow: 0 16px 34px rgba(252, 211, 77, 0.45);
-  padding: 1.25rem;
-  margin-bottom: 1.5rem;
-}
-
-.host-intro h3 {
-  margin: 0 0 0.25rem;
-  font-size: 0.95rem;
-}
-
-.host-intro p {
-  margin: 0;
-  font-size: 0.8rem;
-  color: #64748b;
-}
-
-.host-form {
-  margin-top: 1rem;
-  display: grid;
-  gap: 0.75rem;
-}
-
-@media (min-width: 768px) {
-  .host-form {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.host-form label {
-  display: block;
-  font-size: 0.78rem;
-}
-
-.host-form label span {
-  display: block;
-  margin-bottom: 0.2rem;
-  font-weight: 600;
-  color: #475569;
-}
-
-.host-form input,
-.host-form select,
-.host-form textarea {
-  width: 100%;
-  padding: 0.4rem 0.75rem;
-  border-radius: 999px;
-  border: 1px solid #cbd5e1;
-  font-size: 0.78rem;
-  color: #0f172a;
-}
-
-.host-form textarea {
-  border-radius: 0.9rem;
-  resize: vertical;
-}
-
-.host-form .full {
-  grid-column: 1 / -1;
-}
-
-.host-note {
-  font-size: 0.7rem;
-  color: #6b7280;
-}
-
-.host-actions {
-  margin-top: 0.25rem;
-}
-
-/* Timeline */
+/* Host timeline */
 .timeline {
   border-radius: 1rem;
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(226, 232, 240, 0.95);
   box-shadow: 0 14px 30px rgba(252, 211, 77, 0.35);
   padding: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .timeline h3 {
@@ -619,8 +627,8 @@ main {
 }
 
 .timeline ol {
-  padding-left: 1.1rem;
   margin: 0;
+  padding-left: 1.1rem;
   font-size: 0.8rem;
   color: #475569;
 }
