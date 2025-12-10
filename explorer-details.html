@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="page-explorer">
+<head>
+  <meta charset="UTF-8">
+  <title>Pondy Curations · Trip Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">Pondy Curations</div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="explorer.html">Explore</a>
+        <a href="host.html">Host &amp; Partner</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-wrapper">
+      <!-- Intro -->
+      <section class="inner-hero">
+        <div class="inner-hero-left">
+          <span class="inner-hero-tag">
+            <span class="inner-hero-tag-dot"></span>
+            Step 1 · Your basics
+          </span>
+          <h1>Tell us about your trip</h1>
+          <p>
+            Just a few questions – who you are, when you’re coming, and what kind of Pondy you’re dreaming of.
+            The next page will turn this into a demo curation with prices.
+          </p>
+        </div>
+        <div class="inner-hero-right">
+          <!-- imageD1: soft planner image -->
+          <!-- imageD1 -->
+          <span>imageD1: notebook, coffee, map of Pondy</span>
+        </div>
+      </section>
+
+      <!-- Details form -->
+      <section class="section-block">
+        <div class="form-card">
+          <h3>Your explorer profile</h3>
+          <p>Everything here stays between you and the concierge. For the demo, it lives only in your browser.</p>
+
+          <form id="details-form" class="form-grid two">
+            <label>
+              <span>Your name</span>
+              <input type="text" name="name" required>
+            </label>
+
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required>
+            </label>
+
+            <label>
+              <span>Phone / WhatsApp</span>
+              <input type="tel" name="phone" required>
+            </label>
+
+            <label>
+              <span>Number of explorers</span>
+              <select name="partySize">
+                <option value="1">Solo</option>
+                <option value="2">Duo</option>
+                <option value="3-5">3–5</option>
+                <option value="6-plus">6+</option>
+              </select>
+            </label>
+
+            <label class="full">
+              <span>Tentative dates</span>
+              <input type="text" name="dates" placeholder="e.g., 14–17 March, long weekend in August">
+            </label>
+
+            <label>
+              <span>Budget comfort (per explorer / day)</span>
+              <select name="budget">
+                <option value="any">I’m flexible</option>
+                <option value="budget">₹1500 – ₹2500</option>
+                <option value="mid">₹2500 – ₹4000</option>
+                <option value="premium">₹4000+</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Main areas you want</span>
+              <select name="areas">
+                <option value="any">Surprise me</option>
+                <option value="white-town">French Quarter focus</option>
+                <option value="beach">More beach &amp; ECR</option>
+                <option value="mixed">Mix of White Town, beach &amp; local</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Trip vibe</span>
+              <select name="vibe">
+                <option value="slow">Slow &amp; dreamy</option>
+                <option value="balanced" selected>Balanced explorer</option>
+                <option value="packed">All‑out adventure</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Alcohol preferences</span>
+              <select name="alcohol">
+                <option value="any">Either is fine</option>
+                <option value="dry">No alcohol / family friendly</option>
+                <option value="ok">Wine &amp; cocktails welcome</option>
+              </select>
+            </label>
+
+            <label class="full">
+              <span>Things you’re most excited about</span>
+              <textarea
+                name="interests"
+                rows="3"
+                placeholder="Examples: café‑hopping, heritage, Auroville, surfing, temple walks, live music, yoga, street photography…"
+              ></textarea>
+            </label>
+
+            <label class="full">
+              <span>Any must‑dos or constraints?</span>
+              <textarea
+                name="constraints"
+                rows="3"
+                placeholder="Examples: One day must be at Auroville, travelling with kids/parents, need step‑free stays, celebrating something special…"
+              ></textarea>
+            </label>
+
+            <p class="fee-note full">
+              This is a demo: your answers help us show how the platform would react. In a real flow, a small
+              curation fee (like ₹9) would unlock human review and a live plan.
+            </p>
+
+            <div class="full">
+              <button type="submit" class="btn btn-primary wide">
+                See my demo curation
+              </button>
+            </div>
+
+            <p id="details-message" class="text-muted full" style="margin-top:0.5rem;"></p>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Pondy Curations · Une petite touche française by the Bay of Bengal.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('details-form');
+    const msg = document.getElementById('details-message');
+
+    // Pre-fill from localStorage if user comes back
+    (function prefill() {
+      try {
+        const raw = localStorage.getItem('pondy_explorer_profile');
+        if (!raw || !form) return;
+        const p = JSON.parse(raw);
+        Array.from(form.elements).forEach(el => {
+          if (el.name && p[el.name] !== undefined) {
+            el.value = p[el.name];
+          }
+        });
+      } catch (e) {}
+    })();
+
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const profile = {
+          name: data.get('name') || '',
+          email: data.get('email') || '',
+          phone: data.get('phone') || '',
+          partySize: data.get('partySize') || '',
+          dates: data.get('dates') || '',
+          budget: data.get('budget') || '',
+          areas: data.get('areas') || '',
+          vibe: data.get('vibe') || '',
+          alcohol: data.get('alcohol') || '',
+          interests: data.get('interests') || '',
+          constraints: data.get('constraints') || ''
+        };
+
+        try {
+          localStorage.setItem('pondy_explorer_profile', JSON.stringify(profile));
+        } catch (err) {}
+
+        if (msg) {
+          msg.textContent = 'Saved! Taking you to the demo curation…';
+        }
+        setTimeout(() => {
+          window.location.href = 'explorer-curation.html';
+        }, 500);
+      });
+    }
+  </script>
+</body>
+</html>
